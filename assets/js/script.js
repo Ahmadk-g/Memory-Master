@@ -4,6 +4,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const cardValues = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
+    let firstCard;
+    let secondCard;
+
     
     const cardContainer = this.getElementById("card-container") ;
 
@@ -24,7 +27,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function shuffleCards(cardValues) {
     cardValues.sort(() => Math.random() - 0.5);
-}
-
-
-    
+};
