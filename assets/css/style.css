@@ -1,0 +1,13 @@
+body{
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#memory-game{
+    background-color: darkcyan;
+    border-radius: 8px;
+    padding: 20px;
+}
