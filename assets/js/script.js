@@ -15,12 +15,13 @@ const memoryGame = document.getElementById ("memory-game");
 const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
 const question = document.getElementById("home-question");
-const Score = document.getElementById("score");
+const score = document.getElementById("score");
+const back = document.getElementById ("back")
 let mistakes = document.getElementById("fails");
 let wins = document.getElementById("total-wins");
 
 memoryGame.style.display = "none";
-Score.style.display = "none";
+back.style.display = "none";
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
@@ -41,7 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
 
-            if (this.getAttribute("data-type") === "easy") {
+            if (this.getAttribute("data-type") === "back-button") {
+                gameOptions.style.display = "block";
+                question.style.display = "block";
+                memoryGame.style.display = "none";
+                back.style.display = "none";
+
+            } else if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
                 cardValues = cardValues1;
                 runGame(cardValues);
@@ -69,7 +76,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     cardContainer.innerHTML= "";
                     runGame(cardValues);
                 }
-                
+            
+            //Game wins returns to 0 whenever a new diffiuclty is chosen
+            wins.textContent = 0;
+
             });
         }; 
 
@@ -81,8 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function runGame(cardValues) { 
     gameOptions.style.display = "none";
     question.style.display = "none";
-    Score.style.display = "flex";
+    score.style.display = "flex";
     memoryGame.style.display = "block";
+    back.style.display = "block";
 
     // Shuffle the card values
     shuffleCards(cardValues);
@@ -201,6 +212,11 @@ function incrementWins() {
     wins.innerText = ++oldWinScore;
 }
 
+
+/**
+ * Resets the game
+ * Cards are shuffled again and mistake score is reset
+ */
 function resetGame(){
     alert('You won')
     incrementWins();
