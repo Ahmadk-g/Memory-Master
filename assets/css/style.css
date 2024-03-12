@@ -13,10 +13,9 @@ body>div {
     margin-top: 20px
 }
 
-/* #difficulty-toggle{
-    display: none;
-} */
-
+#difficulty-buttons {
+    margin-top: 20px;
+}
 
 #memory-game{
     background-color: darkcyan;

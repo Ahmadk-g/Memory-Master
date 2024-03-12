@@ -8,22 +8,31 @@
 </head>
 <body>
     <div><h1 class="heading">Memory Master</h1></div>
-    <p>Are you ready to challenge your memory?</p>
-    <div id="game-options">
-        <button data-type="gradual">Do you want to test your memory gradually?</button>
-        <button data-type="difficulty-level">Choose your difficulty level.</button>
-        <!-- <input type="checkbox" id="difficulty-toggle" name="difficulty-toggle">
-        <label for="difficulty-toggle">Choose your difficulty level.</label> -->
+    <p id="home-question">Are you ready to challenge your memory?</p>
+    
+    <div id="game-start">
+        <div id="game-options">
+            <button data-type="gradual">Do you want to test your memory gradually?</button>
+            <button data-type="difficulty-level">Choose your difficulty level.</button>
+        </div>
+
+        <div id="difficulty-buttons">
+            <button data-type="easy">Easy</button>
+            <button data-type="medium">Medium</button>
+            <button data-type="hard">Hard</button>
+        </div>
     </div>
 
-    <div id="difficulty-buttons">
-        <button data-type="easy">Easy</button>
-        <button data-type="medium">Medium</button>
-        <button data-type="hard">Hard</button>
-    </div>
     <div id="memory-game">
         <div class="cards" id="card-container"></div>
     </div>
+
+    <div id="Score">
+        <p class="scores">Mistakes: <span id="fails">0</span>/3</p>
+        <p class="scores">Total game wins: <span id="total-wins">0</span></p>
+    </div>
+
+    
 
     <script src="assets/js/script.js"></script>
 </body>

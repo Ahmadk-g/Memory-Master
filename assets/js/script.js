@@ -13,6 +13,8 @@ let gradual = false;
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
 const difficultyButtons = document.getElementById("difficulty-buttons");
+const gameOptions = document.getElementById("game-options");
+const question = document.getElementById("home-question");
 
 memoryGame.style.display = "none";
 
@@ -58,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
+                    //hide 
+                    gameOptions.style.display = "none";
+                    question.style.display = "none";
                     gradual = true;
                     cardValues = cardValues1
                     cardContainer.innerHTML= "";
@@ -153,9 +158,12 @@ function lockCards() {
 function unflipCards() {
     lockboard = true;
 
+    
+
     setTimeout(() => {
       firstCard.classList.remove('flip');
       secondCard.classList.remove('flip');
+      incrementFails();
 
       resetBoard();
     }, 800);
@@ -172,9 +180,28 @@ function resetBoard () {
 
 };
 
+
+/**
+ * increment mistakes
+ */
+function incrementFails() {
+    
+    let oldScore = parseInt(document.getElementById('fails').innerText);
+    document.getElementById("fails").innerText = ++oldScore;
+
+}
+
+/**
+ * increment game score
+ */
+function incrementWins() {
+    let oldScore = parseInt(document.getElementById('total-wins').innerText);
+    document.getElementById("total-wins").innerText = ++oldScore;
+}
+
 function resetGame(){
     alert('You won')
-
+    incrementWins();
     matchedCards=0;
     resetBoard();
     
