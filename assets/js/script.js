@@ -5,15 +5,26 @@ const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B",
 let CardValues;
 
 const cardContainer = document.getElementById("card-container") ;
+const memoryGame = document.getElementById ("memory-game");
+const difficultyButtons = document.getElementById("difficulty-buttons");
+
+memoryGame.style.display = "none";
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Create array with all buttons
+    let buttons = document.getElementsByTagName("button");
+
+    // Create array with difficulty level buttons. 
+    // initially don't show them.
+    
+    difficultyButtons.style.display = "none";
 
     cardValues = cardValues1;
 
     // check which difficulty button has been pressed
-    let buttons = document.getElementsByTagName("button");
+  
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -29,7 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 cardValues = cardValues3;
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
-            }; 
+            } else if (this.getAttribute("data-type") === "difficulty-level"){
+                if (difficultyButtons.style.display === "block"){
+                    difficultyButtons.style.display = "none";
+                } else {
+                    difficultyButtons.style.display = "block";
+                }
+                
+            }
         });
     };    
 
@@ -44,6 +62,9 @@ let lockboard = false;
 
 
 function runGame(cardValues) { 
+
+    memoryGame.style.display = "block";
+
     // Shuffle the card values
     shuffleCards(cardValues);
 
