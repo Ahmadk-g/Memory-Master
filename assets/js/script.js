@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var firstCard;
 var secondCard;
 var chosenCard;
+let lockboard = false;
 
 /**
  * Shuffle cards using math random
@@ -36,6 +37,7 @@ function shuffleCards(cardValues) {
 function flipCard (e) {
     const cardElement = e.target;
 
+    if (lockboard) return; //prevents the user to click more cards during matching process
     if (cardElement === firstCard) return;
 
     cardElement.classList.add("flip");
@@ -74,6 +76,7 @@ function lockCards() {
  * Added timer for execution
  */
 function unflipCards() {
+    lockboard = true;
 
     setTimeout(() => {
       firstCard.classList.remove('flip');
@@ -85,6 +88,7 @@ function unflipCards() {
 
 function resetboard () {
 
+    lockboard = false;
     firstCard = null;
     secondCard = null;
 
