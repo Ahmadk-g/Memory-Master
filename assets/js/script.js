@@ -16,6 +16,8 @@ const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
 const question = document.getElementById("home-question");
 const Score = document.getElementById("score");
+let mistakes = document.getElementById("fails");
+let wins = document.getElementById("total-wins");
 
 memoryGame.style.display = "none";
 Score.style.display = "none";
@@ -62,9 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
-                    //hide 
-                    gameOptions.style.display = "none";
-                    question.style.display = "none";
                     gradual = true;
                     cardValues = cardValues1
                     cardContainer.innerHTML= "";
@@ -80,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function runGame(cardValues) { 
+    gameOptions.style.display = "none";
+    question.style.display = "none";
     Score.style.display = "flex";
     memoryGame.style.display = "block";
 
@@ -188,24 +189,25 @@ function resetBoard () {
  */
 function incrementFails() {
     
-    let oldScore = parseInt(document.getElementById('fails').innerText);
-    document.getElementById("fails").innerText = ++oldScore;
-
+    let oldFailScore = parseInt(mistakes.innerText);
+    mistakes.innerText = ++oldFailScore;
 }
 
 /**
  * increment game score
  */
 function incrementWins() {
-    let oldScore = parseInt(document.getElementById('total-wins').innerText);
-    document.getElementById("total-wins").innerText = ++oldScore;
+    let oldWinScore = parseInt(wins.innerText);
+    wins.innerText = ++oldWinScore;
 }
 
 function resetGame(){
     alert('You won')
     incrementWins();
-    matchedCards=0;
     resetBoard();
+
+    mistakes.textContent = 0
+    matchedCards = 0;
     
     // remove all cards from the container
     cardContainer.innerHTML= "";
