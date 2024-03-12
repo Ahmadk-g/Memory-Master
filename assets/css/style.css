@@ -1,9 +1,22 @@
 body{
     background-color: bisque;
-    display: flex;
+    /* display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    text-align: center;
     height: 100vh;
+}
+
+#heading {
+    width: 100%;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
 }
 
 #memory-game{
