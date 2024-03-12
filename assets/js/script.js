@@ -1,11 +1,9 @@
-
+const cardValues = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
+const cardContainer = document.getElementById("card-container") ;
+ 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
 
-    const cardValues = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
-
-    
-    const cardContainer = this.getElementById("card-container") ;
 
     // Shuffle the card values
     shuffleCards(cardValues);
@@ -19,11 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
         cardContainer.appendChild(card);
       });
 
+    
+
 });
 
 var firstCard;
 var secondCard;
 var chosenCard;
+
+let matchedCards = 0;
 let lockboard = false;
 
 /**
@@ -58,7 +60,7 @@ function checkForMatch(){
     const isMatch = firstCard.textContent === secondCard.textContent;
 
     isMatch ? lockCards() : unflipCards();
-}
+};
 
 /**
  * disable clicking event for matching cards
@@ -67,8 +69,12 @@ function lockCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-    resetboard();
-}
+    matchedCards += 2;
+
+    matchedCards == cardValues.length ? resetGame() : resetBoard();
+
+    //resetBoard();
+};
 
 /**
  * Unflip cards
@@ -82,14 +88,38 @@ function unflipCards() {
       firstCard.classList.remove('flip');
       secondCard.classList.remove('flip');
 
-      resetboard();
+      resetBoard();
     }, 800);
-  }
+  };
 
-function resetboard () {
+/**
+ * resets the values
+ */
+function resetBoard () {
 
     lockboard = false;
     firstCard = null;
     secondCard = null;
 
-}
+};
+
+function resetGame(){
+    alert('You won')
+
+    matchedCards=0;
+    resetBoard();
+    
+    // remove all cards from the container
+    cardContainer.innerHTML= "";
+    
+    //shuffle and recreate the cards 
+    shuffleCards(cardValues);
+
+    cardValues.forEach((value) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.textContent = value;
+        card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
+        cardContainer.appendChild(card);
+      });
+};
