@@ -15,8 +15,10 @@ const memoryGame = document.getElementById ("memory-game");
 const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
 const question = document.getElementById("home-question");
+const Score = document.getElementById("score");
 
 memoryGame.style.display = "none";
+Score.style.display = "none";
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function runGame(cardValues) { 
-
+    Score.style.display = "flex";
     memoryGame.style.display = "block";
 
     // Shuffle the card values
