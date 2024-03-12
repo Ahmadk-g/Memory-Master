@@ -22,6 +22,10 @@ body>div {
     justify-content: space-between;
 }
 
+#timer {
+    margin-top: 20px;
+}
+
 #memory-game{
     background-color: darkcyan;
     border-radius: 8px;

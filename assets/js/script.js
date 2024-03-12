@@ -16,12 +16,17 @@ const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
 const question = document.getElementById("home-question");
 const score = document.getElementById("score");
-const back = document.getElementById ("back")
+const back = document.getElementById ("back");
+const timer = document.getElementById("timer");
+const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
 let wins = document.getElementById("total-wins");
 
 memoryGame.style.display = "none";
 back.style.display = "none";
+difficultyButtons.style.display = "none";  // initially don't show them.
+timer.style.display = "none";
+
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
@@ -29,10 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
 
-    // Create array with difficulty level buttons. 
-    // initially don't show them.
-    
-    difficultyButtons.style.display = "none";
 
     // cardValues = cardValues1;
 
@@ -47,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 question.style.display = "block";
                 memoryGame.style.display = "none";
                 back.style.display = "none";
+                difficultyButtons.style.display = "none"
+                timer.style.display = "none"
 
             } else if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
@@ -94,6 +97,11 @@ function runGame(cardValues) {
     score.style.display = "flex";
     memoryGame.style.display = "block";
     back.style.display = "block";
+    timer.style.display = "block";
+
+    counter.innerHTML="";
+    
+    countdown();
 
     // Shuffle the card values
     shuffleCards(cardValues);
@@ -238,9 +246,33 @@ function resetGame(){
             alert("game is done");
         }
     }
-    
-    //shuffle and recreate the cards
-    shuffleCards(cardValues);
 
-    createCards(cardValues);
+    
+    runGame(cardValues); //instead of below code
+    // //shuffle and recreate the cards
+    // shuffleCards(cardValues);
+
+    // createCards(cardValues);
 };
+
+/**
+ * https://codepen.io/masudrana2779/pen/GRqzPdZ
+ * function for a countdown
+ */
+function countdown() {
+    var seconds = 59;
+    function tick() {
+      var counter = document.getElementById("counter");
+      counter.innerHTML ="";
+      seconds--;
+      counter.innerHTML =
+        "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+      if (seconds > 0) {
+        setTimeout(tick, 1000);
+      } else {
+        document.getElementById("counter").innerHTML = "";
+      };
+    };
+   
+    tick();
+}
