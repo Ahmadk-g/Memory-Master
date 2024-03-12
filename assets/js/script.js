@@ -1,6 +1,6 @@
 const cardValues = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
 const cardContainer = document.getElementById("card-container") ;
- 
+
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -9,14 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     shuffleCards(cardValues);
     
     // Create and display the cards
-    cardValues.forEach((value) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.textContent = value;
-        card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
-        cardContainer.appendChild(card);
-      });
-
+    createCards(cardValues);
     
 
 });
@@ -34,6 +27,20 @@ let lockboard = false;
 function shuffleCards(cardValues) {
     cardValues.sort(() => Math.random() - 0.5);
 };
+
+/**
+ * Create and display cards
+ */
+
+function createCards(cardValues) {
+    cardValues.forEach((value) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.textContent = value;
+        card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
+        cardContainer.appendChild(card);
+      });
+}
 
 
 function flipCard (e) {
@@ -115,11 +122,5 @@ function resetGame(){
     //shuffle and recreate the cards 
     shuffleCards(cardValues);
 
-    cardValues.forEach((value) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.textContent = value;
-        card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
-        cardContainer.appendChild(card);
-      });
+    createCards(cardValues);
 };
