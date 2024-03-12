@@ -1,16 +1,37 @@
-const cardValues = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
+const cardValues1 = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
+const cardValues2 = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
+const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+let CardValues;
+
 const cardContainer = document.getElementById("card-container") ;
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
 
 
-    // Shuffle the card values
-    shuffleCards(cardValues);
-    
-    // Create and display the cards
-    createCards(cardValues);
-    
+    cardValues = cardValues1;
+
+    // check which difficulty button has been pressed
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type") === "easy") {
+                cardContainer.innerHTML= "";
+                cardValues = cardValues1;
+                runGame(cardValues);
+            } else if (this.getAttribute("data-type") === "medium"){
+                cardValues = cardValues2;
+                cardContainer.innerHTML= "";
+                runGame(cardValues);
+            } else if (this.getAttribute("data-type") === "hard"){
+                cardValues = cardValues3;
+                cardContainer.innerHTML= "";
+                runGame(cardValues);
+            }; 
+        });
+    };    
 
 });
 
@@ -20,6 +41,15 @@ var chosenCard;
 
 let matchedCards = 0;
 let lockboard = false;
+
+
+function runGame(cardValues) { 
+    // Shuffle the card values
+    shuffleCards(cardValues);
+
+    // Create and display the cards
+    createCards(cardValues);
+};
 
 /**
  * Shuffle cards using math random
