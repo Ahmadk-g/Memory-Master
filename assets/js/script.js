@@ -25,7 +25,9 @@ var firstCard;
 var secondCard;
 var chosenCard;
 
-//Shuffle cards
+/**
+ * Shuffle cards using math random
+ */
 function shuffleCards(cardValues) {
     cardValues.sort(() => Math.random() - 0.5);
 };
@@ -33,7 +35,7 @@ function shuffleCards(cardValues) {
 
 function flipCard (e) {
     const cardElement = e.target;
-    
+
     if (cardElement === firstCard) return;
 
     cardElement.classList.add("flip");
@@ -47,8 +49,43 @@ function flipCard (e) {
 
 };
 
-//Function that checks if the first and second card match
+/**
+ * Function that checks if the first and second card match
+ */
 function checkForMatch(){
     const isMatch = firstCard.textContent === secondCard.textContent;
+
+    isMatch ? lockCards() : unflipCards();
+}
+
+/**
+ * disable clicking event for matching cards
+ */
+function lockCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    resetboard();
+}
+
+/**
+ * Unflip cards
+ * removes the class 'flip' and calls reset function
+ * Added timer for execution
+ */
+function unflipCards() {
+
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+
+      resetboard();
+    }, 800);
+  }
+
+function resetboard () {
+
+    firstCard = null;
+    secondCard = null;
 
 }
