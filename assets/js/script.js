@@ -2,7 +2,13 @@ const cardValues1 = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
 const cardValues2 = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
 const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 
-let CardValues;
+let cardValues;
+var firstCard;
+var secondCard;
+var chosenCard;
+let matchedCards = 0;
+let lockboard = false;
+let gradual = false;
 
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
@@ -21,25 +27,29 @@ document.addEventListener("DOMContentLoaded", function() {
     
     difficultyButtons.style.display = "none";
 
-    cardValues = cardValues1;
+    // cardValues = cardValues1;
 
     // check which difficulty button has been pressed
   
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
+
             if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
                 cardValues = cardValues1;
                 runGame(cardValues);
+
             } else if (this.getAttribute("data-type") === "medium"){
                 cardValues = cardValues2;
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
+
             } else if (this.getAttribute("data-type") === "hard"){
                 cardValues = cardValues3;
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
+
             } else if (this.getAttribute("data-type") === "difficulty-level"){
                 if (difficultyButtons.style.display === "block"){
                     difficultyButtons.style.display = "none";
@@ -47,18 +57,19 @@ document.addEventListener("DOMContentLoaded", function() {
                     difficultyButtons.style.display = "block";
                 }
                 
-            }
-        });
-    };    
+            } else if (this.getAttribute("data-type") === "gradual"){
+                    gradual = true;
+                    cardValues = cardValues1
+                    cardContainer.innerHTML= "";
+                    runGame(cardValues);
+                }
+                
+            });
+        }; 
 
 });
 
-var firstCard;
-var secondCard;
-var chosenCard;
 
-let matchedCards = 0;
-let lockboard = false;
 
 
 function runGame(cardValues) { 
@@ -169,8 +180,19 @@ function resetGame(){
     
     // remove all cards from the container
     cardContainer.innerHTML= "";
+
+    // this part only works if the user chose a gradually increasing diffiuclty
+    if (gradual){
+        if (cardValues === cardValues1){
+            cardValues = cardValues2;
+        } else if (cardValues === cardValues2){
+            cardValues = cardValues3;
+        } else {
+            alert("game is done");
+        }
+    }
     
-    //shuffle and recreate the cards 
+    //shuffle and recreate the cards
     shuffleCards(cardValues);
 
     createCards(cardValues);
