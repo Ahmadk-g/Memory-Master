@@ -1,3 +1,12 @@
+
+/*Asterisk wildcard selector to override default styles added by the browser*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 body{
     background-color: bisque;
     display: flex;
@@ -5,12 +14,46 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* header element stylings */
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000
+}
+
+header{
+    background-color: #4024df;
+    background-image: linear-gradient(to right, rgba(53, 48, 57, 0.2), rgba(112, 32, 177, 1)  );
+    padding: 1rem;
+
+    margin-top: 50px;
+    z-index: 99;
+    width: 90%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
 }
 
 
-body>div {
-    margin-top: 20px
+main{
+    width: 90%;
+    padding: 20px;
+    background-color: brown;
+    background-image: linear-gradient(rgba(53, 48, 57, 0.2), rgba(112, 32, 177, 1)  );
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+main>div {
+    margin: 30px;
 }
 
 #difficulty-buttons {
