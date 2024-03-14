@@ -53,6 +53,15 @@ body>div {
     cursor: pointer;
   }
 
+  .card .value {
+    display: none;
+  }
+
   .flip {
     background-color: grey;
+    transition: transform 1s ease;
+  }
+
+  .flip > .value {
+    display: block;
   }

@@ -17,15 +17,15 @@ const gameOptions = document.getElementById("game-options");
 const question = document.getElementById("home-question");
 const score = document.getElementById("score");
 const back = document.getElementById ("back");
-const timer = document.getElementById("timer");
-const counter = document.getElementById("counter");
+// const timer = document.getElementById("timer");
+// const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
 let wins = document.getElementById("total-wins");
 
 memoryGame.style.display = "none";
 back.style.display = "none";
 difficultyButtons.style.display = "none";  // initially don't show them.
-timer.style.display = "none";
+// timer.style.display = "none";
 
 
 // Wait for the DOM to finish loading before running the game
@@ -37,9 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // cardValues = cardValues1;
 
-    // check which difficulty button has been pressed
-  
-
     for (let button of buttons) {
         button.addEventListener("click", function() {
 
@@ -49,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 memoryGame.style.display = "none";
                 back.style.display = "none";
                 difficultyButtons.style.display = "none"
-                timer.style.display = "none"
+                // timer.style.display = "none"
 
             } else if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
@@ -88,20 +85,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-
-
-
+/**
+ * function that is called to start a new game
+ */
 function runGame(cardValues) { 
     gameOptions.style.display = "none";
     question.style.display = "none";
     score.style.display = "flex";
     memoryGame.style.display = "block";
     back.style.display = "block";
-    timer.style.display = "block";
+    // timer.style.display = "block";
 
-    counter.innerHTML="";
+    // counter.innerHTML="";
     
-    countdown();
+    // countdown();
 
     // Shuffle the card values
     shuffleCards(cardValues);
@@ -109,6 +106,7 @@ function runGame(cardValues) {
     // Create and display the cards
     createCards(cardValues);
 };
+
 
 /**
  * Shuffle cards using math random
@@ -125,7 +123,12 @@ function createCards(cardValues) {
     cardValues.forEach((value) => {
         const card = document.createElement('div');
         card.classList.add('card');
-        card.textContent = value;
+
+        const valueElement = document.createElement('div');
+        valueElement.classList.add('value')
+        valueElement.textContent = value;
+        
+        card.appendChild(valueElement);   
         card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
         cardContainer.appendChild(card);
       });
@@ -139,6 +142,7 @@ function flipCard (e) {
     if (cardElement === firstCard) return;
 
     cardElement.classList.add("flip");
+    cardElement.style.transform = "rotateY(360deg)";
 
     if (!firstCard) {
         firstCard = cardElement;
@@ -259,20 +263,20 @@ function resetGame(){
  * https://codepen.io/masudrana2779/pen/GRqzPdZ
  * function for a countdown
  */
-function countdown() {
-    var seconds = 59;
-    function tick() {
-      var counter = document.getElementById("counter");
-      counter.innerHTML ="";
-      seconds--;
-      counter.innerHTML =
-        "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-      if (seconds > 0) {
-        setTimeout(tick, 1000);
-      } else {
-        document.getElementById("counter").innerHTML = "";
-      };
-    };
+// function countdown() {
+//     var seconds = 59;
+//     function tick() {
+//       var counter = document.getElementById("counter");
+//       counter.innerHTML ="";
+//       seconds--;
+//       counter.innerHTML =
+//         "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+//       if (seconds > 0) {
+//         setTimeout(tick, 1000);
+//       } else {
+//         document.getElementById("counter").innerHTML = "";
+//       };
+//     };
    
-    tick();
-}
+//     tick();
+// }
