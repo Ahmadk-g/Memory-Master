@@ -51,6 +51,7 @@ body>div {
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.7s ease;
   }
 
   .card .value {
@@ -59,7 +60,7 @@ body>div {
 
   .flip {
     background-color: grey;
-    transition: transform 1s ease;
+    
   }
 
   .flip > .value {

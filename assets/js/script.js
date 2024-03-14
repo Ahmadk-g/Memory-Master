@@ -105,6 +105,7 @@ function runGame(cardValues) {
 
     // Create and display the cards
     createCards(cardValues);
+
 };
 
 
@@ -127,12 +128,33 @@ function createCards(cardValues) {
         const valueElement = document.createElement('div');
         valueElement.classList.add('value')
         valueElement.textContent = value;
-        
         card.appendChild(valueElement);   
         card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
+        
         cardContainer.appendChild(card);
-      });
+
+    });
+
+    initialFlipAll();
+    
 }
+
+function initialFlipAll () {
+    const cards = Array.from(cardContainer.children)
+    cards.forEach((card) => {
+        
+        setTimeout(() => {
+            card.classList.add('flip');
+            card.style.transform = "rotateY(360deg)";
+            }, 500);
+
+        setTimeout(() => {
+            card.style.transform = "rotateY(0deg)";
+            card.classList.remove('flip');
+          }, 2000);
+        
+    });
+};
 
 
 function flipCard (e) {
@@ -188,11 +210,13 @@ function unflipCards() {
 
     setTimeout(() => {
       firstCard.classList.remove('flip');
+      firstCard.style.transform = "rotateY(0deg)";
       secondCard.classList.remove('flip');
+      secondCard.style.transform = "rotateY(0deg)";
       incrementFails();
 
       resetBoard();
-    }, 800);
+    }, 1000);
   };
 
 /**
