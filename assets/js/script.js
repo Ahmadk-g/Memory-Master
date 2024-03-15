@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (difficultyButtons.style.display === "block"){
                     difficultyButtons.style.display = "none";
                 } else {
-                    difficultyButtons.style.display = "block";
+                    difficultyButtons.style.display = "flex";
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
