@@ -8,7 +8,7 @@
 
 
 body{
-    background-color: bisque;
+    background-color: #d8ebb5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,11 +26,8 @@ h1, h2, h3 {
 }
 
 header{
-    background-color: #4024df;
-    background-image: linear-gradient(to right, rgba(53, 48, 57, 0.2), rgba(112, 32, 177, 1)  );
     padding: 1rem;
-
-    margin-top: 50px;
+    margin: 20px;
     z-index: 99;
     width: 90%;
     display: flex;
@@ -40,20 +37,39 @@ header{
 
 
 main{
-    width: 90%;
-    padding: 20px;
-    background-color: brown;
-    background-image: linear-gradient(rgba(53, 48, 57, 0.2), rgba(112, 32, 177, 1)  );
+    /* width: 90%; */
+    padding: 10px;
+    background-color: #639a67;
+    background-image: linear-gradient(rgba(53, 48, 57, 0.2), #d9bf77 );
     flex: 1 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    border-radius: 8px;
     
 }
 
 main>div {
-    margin: 30px;
+    margin: 10px;
+}
+
+ #game-start {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} 
+
+#game-options {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#game-options > button {
+    width: 80px;
+    margin: 10px;
 }
 
 #difficulty-buttons {
@@ -63,29 +79,57 @@ main>div {
 #score {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 30px;
 }
+
+#total-wins{
+    text-align: end;
+}
+
+.win {
+    align-self: flex-end;
+    margin-bottom: 15px
+}
+
+.fail {
+    align-self: flex-start;
+}
+
+
 
 #timer {
     margin-top: 20px;
 }
 
 #memory-game{
-    background-color: darkcyan;
+    /* background-color: #d9bf77; */
     border-radius: 8px;
-    padding: 20px;
-    margin-top: 30px;
+    padding-top: 20px; 
+    margin-bottom: 10px; 
+    width: 80vw;
+    max-width: 460px;
+}
+
+#memory-game > div {
+    /* padding-top: 20px; */
 }
 
 .cards {
+    /* display: flex;
+    flex-wrap: wrap; */
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 5px;
   }
 
 .card {
-    width: 80px;
+    width: 100%;
+    /* flex: 1 0 25%;
+    margin: 5px; */
     height: 100px;
-    background-color: #3498db;
+    background-color: #530c0c;
     color: #fff;
     display: flex;
     align-items: center;
@@ -108,4 +152,16 @@ main>div {
 
   .flip > .value {
     display: block;
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    main > div {
+        padding: 20px;
+    }
+
+    #memory-game{
+        padding: 20px;
+    }
+
   }

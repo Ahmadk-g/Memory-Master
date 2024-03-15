@@ -14,6 +14,7 @@ const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
 const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
+const gameStart = document.getElementById("game-start")
 const question = document.getElementById("home-question");
 const score = document.getElementById("score");
 const back = document.getElementById ("back");
@@ -41,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
 
             if (this.getAttribute("data-type") === "back-button") {
-                gameOptions.style.display = "block";
+                gameOptions.style.display = "flex";
+                gameStart.style.display = "flex";
                 question.style.display = "block";
                 memoryGame.style.display = "none";
                 back.style.display = "none";
@@ -90,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runGame(cardValues) { 
     gameOptions.style.display = "none";
+    gameStart.style.display = "none";
     question.style.display = "none";
     score.style.display = "flex";
     memoryGame.style.display = "block";
@@ -151,7 +154,7 @@ function initialFlipAll () {
         setTimeout(() => {
             card.style.transform = "rotateY(0deg)";
             card.classList.remove('flip');
-          }, 2000);
+          }, 3000);
         
     });
 };

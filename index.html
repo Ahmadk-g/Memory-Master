@@ -18,12 +18,14 @@
         <h3>Rules of this game</h3>
     </div> -->
 
-    <p id="home-question">Are you ready to challenge your memory?</p>
+    <div id="home-question">
+        <p >Are you ready to challenge your memory?</p>
+    </div>
     
     <div id="game-start">
         <div id="game-options">
-            <button data-type="gradual">Do you want to test your memory gradually?</button>
-            <button data-type="difficulty-level">Choose your difficulty level.</button>
+            <button data-type="gradual">Gradual challenge</button>
+            <button data-type="difficulty-level">Choose difficulty</button>
         </div>
 
         <div id="difficulty-buttons">
@@ -37,8 +39,8 @@
 
     <div id="memory-game">
         <div id="score">
-            <p class="scores">Mistakes: <span id="fails">0</span>/3</p>
-            <p class="scores">Total game wins: <span id="total-wins">0</span></p>
+            <p class="scores win">Total game wins: <span id="total-wins">0</span></p>
+            <p class="scores fail">Mistakes: <span id="fails">0</span>/3</p>
         </div>
         <div class="cards" id="card-container"></div>
 
