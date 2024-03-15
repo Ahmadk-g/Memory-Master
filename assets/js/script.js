@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 back.style.display = "none";
                 difficultyButtons.style.display = "none"
                 // timer.style.display = "none"
+                backReset()
 
             } else if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "difficulty-level"){
-                if (difficultyButtons.style.display === "block"){
+                if (difficultyButtons.style.display === "flex"){
                     difficultyButtons.style.display = "none";
                 } else {
                     difficultyButtons.style.display = "flex";
@@ -196,7 +197,13 @@ function lockCards() {
 
     matchedCards += 2;
 
-    matchedCards == cardValues.length ? resetGame() : resetBoard();
+    // matchedCards == cardValues.length ? resetGame() : resetBoard();
+
+   if ( matchedCards == cardValues.length ) {
+    alert('You won')
+    resetGame()} else { 
+        resetBoard();
+    }
 
     //resetBoard();
 };
@@ -241,6 +248,11 @@ function incrementFails() {
     
     let oldFailScore = parseInt(mistakes.innerText);
     mistakes.innerText = ++oldFailScore;
+
+    if (mistakes.innerText == 5){
+        resetGame();
+        alert("Game Over")
+    }
 }
 
 /**
@@ -257,7 +269,7 @@ function incrementWins() {
  * Cards are shuffled again and mistake score is reset
  */
 function resetGame(){
-    alert('You won')
+
     incrementWins();
     resetBoard();
 
@@ -278,6 +290,7 @@ function resetGame(){
         }
     }
 
+
     
     runGame(cardValues); //instead of below code
     // //shuffle and recreate the cards
@@ -285,6 +298,16 @@ function resetGame(){
 
     // createCards(cardValues);
 };
+
+
+function backReset(){
+    resetBoard();
+
+    mistakes.textContent = 0
+    matchedCards = 0;
+
+    cardContainer.innerHTML= "";
+}
 
 /**
  * https://codepen.io/masudrana2779/pen/GRqzPdZ
