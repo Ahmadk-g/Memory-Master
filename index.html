@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Memory Master</title>
 </head>
+
 <body>
     <header>
         <h1 class="heading">Memory Master</h1>
@@ -13,65 +15,102 @@
 
 
     <main>
-    <!-- <button data-type="rule-button">Rules</button>
+        <!-- <button data-type="rule-button">Rules</button>
     <div id="rules">
         <h3>Rules of this game</h3>
     </div> -->
 
-    <div id="rule-area">
-        <button data-type="rules">Rules</button>
-        
-        <div id="rule-window">
-            <h3>Rules of the Game</h3>
-            <p>Welcome to Memory Master! Get ready to excercise your brain and challenge your memory skills.</p>
-            <ol>
-                <li><span>Gameplay:</span> Click on any two cards to reveal their hidden symbols. If the symbols match, the cards stay face-up. If not, they'll flip back over, so stay focused.</p>
-                </li>
-            </ol>
+        <div id="rule-area">
+            <button id="rule-button" data-type="rules">Rules</button>
+
+            <div id="rule-window">
+                <h3>Rules of the Game</h3>
+                <br>
+                <p>Welcome to Memory Master! Get ready to excercise your brain and challenge your memory skills.</p>
+                <br>
+                <br>
+                <ol>
+                    <li>
+                        <span>Gameplay:</span> Click on any two cards to reveal their hidden symbols. If the symbols
+                        match, the cards stay face-up. If not, they'll flip back over, so stay focused.
+                    </li>
+                    <br>
+                    <li>
+                        <span>Scoring:</span>
+                        <ul>
+                            <li>
+                                Gradual Mode: Race against the clock, match all pairs across three levels of varying
+                                difficulty, aiming for a record-breaking time.
+                            </li>
+                            <br>
+                            <li>
+                                Difficulty Mode: Maintain an unbroken streak of victories at your chosen difficulty
+                                level and set a new record for a win streak.
+                            </li>
+                        </ul>
+
+                    </li>
+                </ol>
+            </div>
         </div>
-    </div>
 
-    <div id="home-question">
-        <p >Are you ready to challenge your memory?</p>
-    </div>
-    
-    
-    <div id="game-start">
-        <div id="game-options">
-            <button data-type="gradual">Gradual challenge</button>
-            <button data-type="difficulty-level">Choose difficulty</button>
+        <div id="home-question">
+            <p>Are you ready to challenge your memory?</p>
         </div>
 
-        <div id="difficulty-buttons">
-            <button data-type="easy">Easy</button>
-            <button data-type="medium">Medium</button>
-            <button data-type="hard">Hard</button>
+
+        <div id="game-start">
+            <div id="game-options">
+                <button data-type="gradual">Gradual challenge</button>
+                <button data-type="difficulty-level">Choose difficulty</button>
+            </div>
+
+            <div id="difficulty-buttons">
+                <div>
+                    <button data-type="easy">Easy</button>
+                    <!-- <p class="win-streak">Win Streak <br> <span id="easy-streak"></span></p> -->
+                </div>
+                <div>
+                    <button data-type="medium">Medium</button>
+                    <!-- <p class="win-streak">Win Streak <br> <span id="easy-streak"></span></p> -->
+                </div>
+                <div>
+                    <button data-type="hard">Hard</button>
+                    <!-- <p class="win-streak">Win Streak <br> <span id="easy-streak"></span></p> -->
+                </div>
+                
+            </div>
         </div>
-    </div>
 
-    
 
-    <div id="memory-game">
-        <div id="score">
-            <p class="scores win">Total game wins: <span id="total-wins">0</span></p>
-            <p class="scores fail">Mistakes: <span id="fails">0</span>/5</p>
-        </div>
-        <div class="cards" id="card-container"></div>
 
-        <!-- <div id="timer">
+        <div id="memory-game">
+            <button id="i-button" data-type="rules"><i class="fa-solid fa-circle-info"></i></button>
+            <div id="score">
+                <p class="scores win">Total game wins: <span id="total-wins">0</span></p>
+                <p class="scores fail">Mistakes: <span id="fails">0</span>/5</p>
+            </div>
+            <div class="cards" id="card-container"></div>
+
+            <!-- <div id="timer">
             <span id="counter"></span>
         </div> -->
 
-    </div>
+        </div>
 
-    <div id = "back">
-        <button data-type="back-button">Back</button>
-    </div>
+
     </main>
+    <div id="back">
+        <button class="back-button" data-type="back-button">Back</button>
+    </div>
+    <div id="resume">
+        <button class="back-button" data-type="resume">continue</button>
+    </div>
 
-    
 
     <script src="assets/js/script.js"></script>
-</body>
-</html>
 
+    <script src="https://kit.fontawesome.com/7fa9dd4cad.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -9,6 +9,7 @@ var chosenCard;
 let matchedCards = 0;
 let lockboard = false;
 let gradual = false;
+let gameOn = false;
 
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
@@ -20,6 +21,9 @@ const gameStart = document.getElementById("game-start")
 const question = document.getElementById("home-question");
 const score = document.getElementById("score");
 const back = document.getElementById ("back");
+const resume = document.getElementById("resume");
+const ruleButton = document.getElementById("rule-button");
+const iButton = document.getElementById("i-button");
 // const timer = document.getElementById("timer");
 // const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
@@ -29,8 +33,11 @@ memoryGame.style.display = "none";
 back.style.display = "none";
 difficultyButtons.style.display = "none";  // initially don't show them.
 ruleWindow.style.display = "none";
+iButton.style.display="none";
+resume.style.display="none"
 // ruleArea.style.display="none";
 // timer.style.display = "none";
+
 
 
 // Wait for the DOM to finish loading before running the game
@@ -53,16 +60,38 @@ document.addEventListener("DOMContentLoaded", function() {
                 back.style.display = "none";
                 difficultyButtons.style.display = "none";
                 ruleWindow.style.display = "none";
+                ruleButton.style.display = "block";
+                // iButton.style.display = "none";
                 // timer.style.display = "none"
                 backReset()
 
+            } else if (this.getAttribute("data-type")==="resume"){
+                resume.style.display = "none";
+                if (!gameOn){
+                    gameOptions.style.display = "flex";
+                    gameStart.style.display = "flex";
+                    question.style.display = "block";
+                    memoryGame.style.display = "none";
+                    back.style.display = "none";
+                    difficultyButtons.style.display = "none";
+                    ruleWindow.style.display = "none";
+                    ruleButton.style.display = "block";
+                } else {
+                    memoryGame.style.display = "block";
+                    back.style.display= "block";
+                    ruleWindow.style.display = "none";
+
+                }
+
             } else if (this.getAttribute("data-type")==="rules") {
                 ruleWindow.style.display = "block"
-                back.style.display = "block";
+                resume.style.display = "block";
                 gameStart.style.display = "none";
                 memoryGame.style.display = "none";
                 question.style.display = "none";
                 gameOptions.style.display = "none";
+                ruleButton.style.display = "none";
+                back.style.display = "none";
 
             } else if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
@@ -111,6 +140,9 @@ function runGame(cardValues) {
     score.style.display = "flex";
     memoryGame.style.display = "block";
     back.style.display = "block";
+    ruleButton.style.display="none";
+    iButton.style.display = "block"
+    gameOn = true;
     // timer.style.display = "block";
 
     // counter.innerHTML="";

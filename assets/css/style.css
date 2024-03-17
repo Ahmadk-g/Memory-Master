@@ -61,9 +61,13 @@ main>div {
     margin: 10px;
 }
 
-/* #rule-area {
+#rule-window{
+    z-index: 99;
+}
+
+p {
     text-align: start;
-} */
+}
 
 li {
     text-align: start;
@@ -96,7 +100,6 @@ li > span {
 button {
     box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px inset, rgba(217, 194, 61, 0.3) 0px 30px 60px -30px, rgba(64, 62, 10, 0.35) 0px -2px 6px 0px inset;
     background-color: #d9bf77;
-    padding: 10px;
     border-radius: 8px;
     padding: 10px;
 }
@@ -120,6 +123,12 @@ button:hover {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+
+
+.win-streak {
+    font-size: small;
 }
 
 #score {
@@ -152,7 +161,7 @@ button:hover {
     /* background-color: #d9bf77; */
     border-radius: 8px;
     padding-top: 20px; 
-    margin-bottom: 10px; 
+    margin-bottom: 40px; 
     width: 80vw;
     max-width: 460px;
 }
@@ -200,12 +209,20 @@ button:hover {
     display: block;
   }
 
-  @media screen and (min-width: 400px) {
+  
+
+  .back-button{
+    width: 136px;
+    margin-top: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
 
 
     main {
         min-height: 400px;
-        width: 400px;
+        min-width: 400px;
+        max-width: 450px;
     }
 
     main > div {
