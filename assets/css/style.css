@@ -118,6 +118,10 @@ button:hover {
     
 }
 
+#gradual-button{
+    margin-bottom: 20px;
+}
+
 
 #difficulty-buttons {
     position: relative;

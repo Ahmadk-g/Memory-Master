@@ -12,6 +12,9 @@ let gradual = false;
 let gameOn = false;
 let level = "";
 
+let seconds = 0;
+let minutes = 0;
+
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
 const ruleArea = document.getElementById("rule-area");
@@ -28,17 +31,23 @@ const iButton = document.getElementById("i-button");
 // const timer = document.getElementById("timer");
 // const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
+let winScore = document.getElementsByClassName("win");
 let wins = document.getElementById("total-wins");
 let easyStreak = document.getElementById("easy-streak");
 let midStreak = document.getElementById("medium-streak");
 let hardStreak = document.getElementById("hard-streak");
+let bestTime = document.getElementById("best-time");
+const timer= document.getElementById("timer");
+let time = document.getElementById("time");
+
 
 memoryGame.style.display = "none";
 back.style.display = "none";
 difficultyButtons.style.display = "none";  // initially don't show them.
 ruleWindow.style.display = "none";
 iButton.style.display="none";
-resume.style.display="none"
+resume.style.display="none";
+time.style.display= "none";
 // ruleArea.style.display="none";
 // timer.style.display = "none";
 
@@ -121,10 +130,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
+                    time.style.display = "block";
+                    // winScore.style.display = "none";
                     gradual = true;
                     cardValues = cardValues1
                     cardContainer.innerHTML= "";
                     runGame(cardValues);
+
                 }
             
             //Game wins returns to 0 whenever a new diffiuclty is chosen
@@ -148,6 +160,11 @@ function runGame(cardValues) {
     ruleButton.style.display="none";
     iButton.style.display = "block"
     gameOn = true;
+
+    seconds=0;
+    minutes =0;
+
+    setTimer();
     // timer.style.display = "block";
 
     // counter.innerHTML="";
@@ -162,6 +179,21 @@ function runGame(cardValues) {
 
 };
 
+
+function setTimer() {
+    setInterval(() => {
+        seconds++;
+
+        if (seconds == 60) {
+            seconds = 0;
+            minutes ++;
+        }
+
+        const timeFormat = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+
+        timer.textContent = timeFormat;
+    }, 1000)
+}
 
 /**
  * Shuffle cards using math random

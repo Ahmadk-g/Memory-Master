@@ -61,7 +61,10 @@
 
         <div id="game-start">
             <div id="game-options">
-                <button data-type="gradual">Gradual challenge</button>
+                <button id= "gradual-button" data-type="gradual">Gradual challenge</button>
+                <p id="high-score">Best Time: <span id="best-time"></span></p>
+                <br>
+                <br>
                 <button data-type="difficulty-level">Choose difficulty</button>
             </div>
 
@@ -98,6 +101,7 @@
         <div id="memory-game">
             <button id="i-button" data-type="rules"><i class="fa-solid fa-circle-info"></i></button>
             <div id="score">
+                <p id = "time">Time: <span id="timer">0:00</span></p>
                 <p class="scores win">Total game wins: <span id="total-wins">0</span></p>
                 <p class="scores fail">Mistakes: <span id="fails">0</span>/5</p>
             </div>
