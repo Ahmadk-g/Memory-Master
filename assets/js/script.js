@@ -10,6 +10,7 @@ let matchedCards = 0;
 let lockboard = false;
 let gradual = false;
 let gameOn = false;
+let level = "";
 
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
@@ -28,6 +29,9 @@ const iButton = document.getElementById("i-button");
 // const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
 let wins = document.getElementById("total-wins");
+let easyStreak = document.getElementById("easy-streak");
+let midStreak = document.getElementById("medium-streak");
+let hardStreak = document.getElementById("hard-streak");
 
 memoryGame.style.display = "none";
 back.style.display = "none";
@@ -42,6 +46,8 @@ resume.style.display="none"
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
+
+    level= "";
 
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
@@ -67,43 +73,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
-                if (!gameOn){
-                    gameOptions.style.display = "flex";
-                    gameStart.style.display = "flex";
-                    question.style.display = "block";
-                    memoryGame.style.display = "none";
-                    back.style.display = "none";
-                    difficultyButtons.style.display = "none";
-                    ruleWindow.style.display = "none";
-                    ruleButton.style.display = "block";
-                } else {
-                    memoryGame.style.display = "block";
-                    back.style.display= "block";
-                    ruleWindow.style.display = "none";
-
-                }
+                memoryGame.style.display = "block";
+                back.style.display= "block";
+                ruleWindow.style.display = "none";
+                
 
             } else if (this.getAttribute("data-type")==="rules") {
-                ruleWindow.style.display = "block"
-                resume.style.display = "block";
+                ruleWindow.style.display = "block";
                 gameStart.style.display = "none";
                 memoryGame.style.display = "none";
                 question.style.display = "none";
                 gameOptions.style.display = "none";
                 ruleButton.style.display = "none";
-                back.style.display = "none";
+                // back.style.display = "none";
+                if (gameOn){
+                    resume.style.display = "block";
+                    back.style.display="none"
+                } else {
+                    back.style.display = "block";
+                }
 
             } else if (this.getAttribute("data-type") === "easy") {
+                level = "easy";
                 cardContainer.innerHTML= "";
                 cardValues = cardValues1;
+
+                
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "medium"){
+                level = "medium";
                 cardValues = cardValues2;
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "hard"){
+                level = "hard";
                 cardValues = cardValues3;
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
@@ -295,10 +300,10 @@ function incrementFails() {
     let oldFailScore = parseInt(mistakes.innerText);
     mistakes.innerText = ++oldFailScore;
 
-    if (mistakes.innerText == 5){
-        resetGame();
-        alert("Game Over")
-    }
+    // if (mistakes.innerText == 5){
+    //     resetGame();
+    //     alert("Game Over")
+    // }
 }
 
 /**
@@ -307,7 +312,25 @@ function incrementFails() {
 function incrementWins() {
     let oldWinScore = parseInt(wins.innerText);
     wins.innerText = ++oldWinScore;
+
+    if (level === "easy") {
+        let oldStreak = parseInt(easyStreak.innerText);
+        if (parseInt(wins.innerText) > oldStreak){
+            easyStreak.innerText = wins.innerText
+        };
+    } else if (level === "medium") {
+        let oldStreak = parseInt(midStreak.innerText);
+        if (parseInt(wins.innerText) > oldStreak){
+            midStreak.innerText = wins.innerText
+        };
+    } else if (level === "hard") {
+        let oldStreak = parseInt(hardStreak.innerText);
+        if (parseInt(wins.innerText) > oldStreak){
+            hardStreak.innerText = wins.innerText
+        };
+    };
 }
+
 
 
 /**
@@ -353,6 +376,7 @@ function backReset(){
     matchedCards = 0;
 
     cardContainer.innerHTML= "";
+    gameOn = false;
 }
 
 /**

@@ -113,8 +113,6 @@ button:hover {
     width: 90%;
     margin: 10px;
     
-    
-    
 }
 
 
@@ -126,10 +124,18 @@ button:hover {
 }
 
 
-
 .win-streak {
+    /* width: 53.64px; */
+    padding-top: 5px;
+    text-align: center;
     font-size: small;
 }
+
+
+#streak-title {
+    font-size: small;
+}
+
 
 #score {
     display: flex;
