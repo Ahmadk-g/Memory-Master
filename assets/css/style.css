@@ -88,6 +88,7 @@ li > span {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
+    width: 100%;
 } 
 
 #game-options {
@@ -102,6 +103,8 @@ button {
     background-color: #d9bf77;
     border-radius: 8px;
     padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 button:hover {
@@ -117,24 +120,31 @@ button:hover {
 
 
 #difficulty-buttons {
+    position: relative;
     width: 120%;
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 
+.streak-area{
+    padding-top: 15px;
+}
+
 .win-streak {
     /* width: 53.64px; */
-    padding-top: 5px;
+    /* padding-top: 15px; */
     text-align: center;
     font-size: small;
 }
 
-
-#streak-title {
+.win-streak-text {
     font-size: small;
-}
+    position: absolute;
+    bottom: -10px;
+    left: 22px;
+  }
 
 
 #score {
@@ -222,7 +232,7 @@ button:hover {
     margin-top: 5px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 420px) {
 
 
     main {
@@ -240,3 +250,5 @@ button:hover {
     }
 
   }
+
+   
