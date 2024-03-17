@@ -162,7 +162,7 @@ button:hover {
     text-align: end;
 }
 
-.win {
+#win,#time {
     align-self: flex-end;
     margin-bottom: 15px
 }

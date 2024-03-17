@@ -31,7 +31,7 @@ const iButton = document.getElementById("i-button");
 // const timer = document.getElementById("timer");
 // const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
-let winScore = document.getElementsByClassName("win");
+let winScore = document.getElementById("win");
 let wins = document.getElementById("total-wins");
 let easyStreak = document.getElementById("easy-streak");
 let midStreak = document.getElementById("medium-streak");
@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 // iButton.style.display = "none";
                 // timer.style.display = "none"
                 backReset()
+
+                clearInterval(clock);
+                timer.innerHTML='0:00'
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
@@ -130,7 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
-                    time.style.display = "block";
+                    // timer.innerHTML= "0:00";
+
+                    level = "gradual";
                     // winScore.style.display = "none";
                     gradual = true;
                     cardValues = cardValues1
@@ -160,11 +165,17 @@ function runGame(cardValues) {
     ruleButton.style.display="none";
     iButton.style.display = "block"
     gameOn = true;
+    winScore.style.display = "block";
+    time.style.display = "none";
 
     seconds=0;
     minutes =0;
-
-    setTimer();
+    if (level === "gradual"){
+        time.style.display = "block";
+        winScore.style.display = "none";
+        clock = setInterval(setTimer, 1000);
+    }
+    
     // timer.style.display = "block";
 
     // counter.innerHTML="";
@@ -181,7 +192,7 @@ function runGame(cardValues) {
 
 
 function setTimer() {
-    setInterval(() => {
+    // setInterval(() => {
         seconds++;
 
         if (seconds == 60) {
@@ -192,7 +203,7 @@ function setTimer() {
         const timeFormat = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
 
         timer.textContent = timeFormat;
-    }, 1000)
+    // }, 1000)
 }
 
 /**
