@@ -61,6 +61,18 @@ main>div {
     margin: 10px;
 }
 
+/* #rule-area {
+    text-align: start;
+} */
+
+li {
+    text-align: start;
+}
+
+li > span {
+    font-weight: bold;
+}
+
 #home-question{
     padding: 20px 5px;
 }
@@ -188,12 +200,12 @@ button:hover {
     display: block;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 400px) {
 
 
     main {
         min-height: 400px;
-        min-width: 400px;
+        width: 400px;
     }
 
     main > div {

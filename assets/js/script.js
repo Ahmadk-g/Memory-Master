@@ -12,6 +12,8 @@ let gradual = false;
 
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
+const ruleArea = document.getElementById("rule-area");
+const ruleWindow = document.getElementById("rule-window");
 const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
 const gameStart = document.getElementById("game-start")
@@ -26,6 +28,8 @@ let wins = document.getElementById("total-wins");
 memoryGame.style.display = "none";
 back.style.display = "none";
 difficultyButtons.style.display = "none";  // initially don't show them.
+ruleWindow.style.display = "none";
+// ruleArea.style.display="none";
 // timer.style.display = "none";
 
 
@@ -47,9 +51,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 question.style.display = "block";
                 memoryGame.style.display = "none";
                 back.style.display = "none";
-                difficultyButtons.style.display = "none"
+                difficultyButtons.style.display = "none";
+                ruleWindow.style.display = "none";
                 // timer.style.display = "none"
                 backReset()
+
+            } else if (this.getAttribute("data-type")==="rules") {
+                ruleWindow.style.display = "block"
+                back.style.display = "block";
+                gameStart.style.display = "none";
+                memoryGame.style.display = "none";
+                question.style.display = "none";
+                gameOptions.style.display = "none";
 
             } else if (this.getAttribute("data-type") === "easy") {
                 cardContainer.innerHTML= "";
@@ -201,6 +214,7 @@ function lockCards() {
 
    if ( matchedCards == cardValues.length ) {
     alert('You won')
+    incrementWins();
     resetGame()} else { 
         resetBoard();
     }
@@ -270,7 +284,7 @@ function incrementWins() {
  */
 function resetGame(){
 
-    incrementWins();
+    // incrementWins();
     resetBoard();
 
     mistakes.textContent = 0
