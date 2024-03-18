@@ -80,6 +80,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 // iButton.style.display = "none";
                 // timer.style.display = "none"
 
+                
+
                 clearInterval(clock);
                 timer.innerHTML='0:00';
 
@@ -217,6 +219,30 @@ function setTimer() {
     // }, 1000)
 }
 
+function bestTimeRecord(){
+    let minuteB = (bestTime.innerText[0]);
+    let tenthB = (bestTime.innerText[2]);
+    let secondB = (bestTime.innerText[3]);
+    console.log(minuteB, tenthB, secondB);
+    let minuteT = (timer.innerText [0]);
+    let tenthT = (timer.innerText [2]);
+    let secondT = (timer.innerText [3]);
+    console.log(minuteT, tenthT, secondT);
+
+    if (bestTime.innerText==="0:00"){
+        bestTime.innerText = timer.innerText;
+    }
+
+    if (parseInt(minuteB)>parseInt(minuteT)){
+       bestTime.innerText = timer.innerText;
+    } else if (parseInt(tenthB)>parseInt(tenthT)){
+        bestTime.innerText = timer.innerText;
+    } else if (parseInt(secondB)>parseInt(secondT)){
+        bestTime.innerText = timer.innerText;
+    }
+    
+}
+
 /**
  * Shuffle cards using math random
  */
@@ -343,7 +369,6 @@ function resetBoard () {
     lockboard = false;
     firstCard = null;
     secondCard = null;
-
 };
 
 
@@ -410,7 +435,27 @@ function resetGame(){
         } else if (cardValues === cardValues2){
             cardValues = cardValues3;
         } else {
-            alert("game is done");
+            console.log("supposed to end");
+            bestTimeRecord();
+            // alert("game is done");
+
+            gameOptions.style.display = "flex";
+            gameStart.style.display = "flex";
+            question.style.display = "block";
+            memoryGame.style.display = "none";
+            back.style.display = "none";
+            difficultyButtons.style.display = "none";
+            ruleWindow.style.display = "none";
+            ruleButton.style.display = "block";
+            // iButton.style.display = "none";
+            // timer.style.display = "none"
+
+            
+
+            clearInterval(clock);
+            timer.innerHTML='0:00';
+
+            backReset()
         }
     }
 
