@@ -7,7 +7,7 @@ var firstCard;
 var secondCard;
 var chosenCard;
 let matchedCards = 0;
-let lockboard = false;
+let lockboard = true;
 let gradual = false;
 let gameOn = false;
 let level = "";
@@ -246,6 +246,7 @@ function initialFlipAll () {
             }, 500);
 
         setTimeout(() => {
+            lockboard=false;
             card.style.transform = "rotateY(0deg)";
             card.classList.remove('flip');
           }, 3000);
