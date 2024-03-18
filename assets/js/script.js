@@ -432,8 +432,10 @@ function resetGame(){
     if (gradual){
         if (cardValues === cardValues1){
             cardValues = cardValues2;
+            runGame(cardValues); 
         } else if (cardValues === cardValues2){
             cardValues = cardValues3;
+            runGame(cardValues); 
         } else {
             console.log("supposed to end");
             bestTimeRecord();
@@ -457,11 +459,13 @@ function resetGame(){
 
             backReset()
         }
+    } else {
+        runGame(cardValues); 
     }
 
 
     
-    runGame(cardValues); //instead of below code
+   //instead of below code
     // //shuffle and recreate the cards
     // shuffleCards(cardValues);
 
