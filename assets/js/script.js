@@ -1,6 +1,12 @@
-const cardValues1 = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
-const cardValues2 = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
-const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+// const cardValues1 = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
+// const cardValues2 = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
+// const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+const imageArray = [];
+
+const cardValuesImgs1 = ["wizard", "wizard", "sword", "sword", "potions", "potions", "orc", "orc", "hydra", "elf", "hydra", "elf"]
+const cardValuesImgs2 = [...cardValuesImgs1, ]
+const cardValuesImgs3 = [...cardValuesImgs2, ]
 
 let cardValues;
 var firstCard;
@@ -114,7 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (this.getAttribute("data-type") === "easy") {
                 level = "easy";
                 cardContainer.innerHTML= "";
-                cardValues = cardValues1;
+                // cardValues = cardValues1;
+                cardValues = cardValuesImgs1
 
                 
                 runGame(cardValues);
@@ -259,9 +266,11 @@ function createCards(cardValues) {
         const card = document.createElement('div');
         card.classList.add('card');
 
-        const valueElement = document.createElement('div');
+        // const valueElement = document.createElement('div');
+        const valueElement = document.createElement('img');
         valueElement.classList.add('value')
-        valueElement.textContent = value;
+        // valueElement.textContent = value;
+        valueElement.setAttribute('src', `assets/images/cardIcons/${value}.png`)
         card.appendChild(valueElement);   
         card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
         
@@ -314,7 +323,9 @@ function flipCard (e) {
  * Function that checks if the first and second card match
  */
 function checkForMatch(){
-    const isMatch = firstCard.textContent === secondCard.textContent;
+    console.log('firstCard', firstCard)
+    console.log('secondCard', secondCard)
+    const isMatch = firstCard.innerHTML === secondCard.innerHTML;
 
     isMatch ? lockCards() : unflipCards();
 };
