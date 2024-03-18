@@ -2,11 +2,16 @@
 // const cardValues2 = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
 // const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 
-const imageArray = [];
+let imageArray = ["banner", "book", "cyclops", "dead", "dragon", "elf", "gem", "giant", "haunted-house", "hydra", "magic-wand", "moon", "orc", "potions", "red-riding-hood", "skills", "sword", "wizard", "wooden-stick"];
 
-const cardValuesImgs1 = ["wizard", "wizard", "sword", "sword", "potions", "potions", "orc", "orc", "hydra", "elf", "hydra", "elf"]
-const cardValuesImgs2 = [...cardValuesImgs1, ]
-const cardValuesImgs3 = [...cardValuesImgs2, ]
+// const cardValuesImgs1 = [] ["wizard", "wizard", "sword", "sword", "potions", "potions", "orc", "orc", "hydra", "elf", "hydra", "elf"]
+// const cardValuesImgs2 = [...cardValuesImgs1, ]
+// const cardValuesImgs3 = [...cardValuesImgs2, ]
+
+let cardValuesImgs1 = [];
+let cardValues1 = []; 
+let cardValues2 = []; 
+let cardValues3 = []; 
 
 let cardValues;
 var firstCard;
@@ -119,22 +124,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
             } else if (this.getAttribute("data-type") === "easy") {
                 level = "easy";
+                
                 cardContainer.innerHTML= "";
+
+                // imageArray.sort( () => Math.random() - 0.5);
                 // cardValues = cardValues1;
-                cardValues = cardValuesImgs1
+                //cardValuesImgs1 = imageArray.sort(function() { return 0.5 - Math.random() });
+                // cardValues1 = imageArray.slice(0,6);
+                // cardValues = [...cardValues1, ...cardValues1]
+                // cardValues = Array.from({ length: 2 }, () => [...cardValuesImgs1]).flat();
 
                 
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "medium"){
                 level = "medium";
-                cardValues = cardValues2;
+                // cardValues = cardValues2;
+                // imageArray.sort( () => Math.random() - 0.5);
+                // cardValues2 = imageArray.slice(0,8);
+                // cardValues = [...cardValues2, ...cardValues2]
+
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "hard"){
                 level = "hard";
-                cardValues = cardValues3;
+                // cardValues = cardValues3;
+                // imageArray.sort( () => Math.random() - 0.5);
+                // cardValues3 = imageArray.slice(0,8);
+                // cardValues = [...cardValues3, ...cardValues3]
+
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
@@ -202,6 +221,25 @@ function runGame(cardValues) {
     
     // countdown();
 
+    imageArray.sort( () => Math.random() - 0.5);
+
+    if (level === "easy"){
+        cardValues1 = imageArray.slice(0,6);
+        cardValues = [...cardValues1, ...cardValues1];
+        console.log(cardValues);
+    } else if ( level === "medium"){
+        cardValues2 = imageArray.slice(0,8);
+        cardValues = [...cardValues2, ...cardValues2]
+    } else if (level === "hard") {
+        cardValues3 = imageArray.slice(0,8);
+        cardValues = [...cardValues3, ...cardValues3]
+    };
+
+    console.log(cardValues.length)
+    console.log(typeof cardValues)
+    console.log(cardValues)
+   
+
     // Shuffle the card values
     shuffleCards(cardValues);
 
@@ -255,6 +293,21 @@ function bestTimeRecord(){
  */
 function shuffleCards(cardValues) {
     cardValues.sort(() => Math.random() - 0.5);
+
+    // imageArray.sort( () => Math.random() - 0.5);
+    
+
+    // if (level === "easy"){
+        
+    //     cardValuesImgs1 = imageArray.slice(0,6);
+       
+    //     cardValues = Array.from({ length: 2 }, () => [...cardValuesImgs1]).flat();
+    //     console.log(cardValues)
+
+    // };
+    //             // cardValuesImgs1 = cardValuesImgs1.slice(0,6);
+    //             // 
+    
 };
 
 /**
@@ -262,25 +315,26 @@ function shuffleCards(cardValues) {
  */
 
 function createCards(cardValues) {
+    // console.log("this is the array", cardValues);
+    console.log(cardValues.length);
     cardValues.forEach((value) => {
         const card = document.createElement('div');
         card.classList.add('card');
-
         // const valueElement = document.createElement('div');
         const valueElement = document.createElement('img');
         valueElement.classList.add('value')
         // valueElement.textContent = value;
         valueElement.setAttribute('src', `assets/images/cardIcons/${value}.png`)
-        card.appendChild(valueElement);   
-        card.addEventListener('click', flipCard); // Event listener added, so that clicked card undergoes function.
+        card.appendChild(valueElement);
+        card.addEventListener('click', (e) => flipCard(e, cardValues)); // Event listener added, so that clicked card undergoes function.
         
         cardContainer.appendChild(card);
-
     });
+    console.log(typeof cardValues)
 
     initialFlipAll();
     
-}
+};
 
 function initialFlipAll () {
     const cards = Array.from(cardContainer.children)
@@ -298,12 +352,15 @@ function initialFlipAll () {
           }, 3000);
         
     });
+    
+
 };
 
 
-function flipCard (e) {
+function flipCard(e, cardValues) {
+    console.log('cardValues flipCard', cardValues)
     const cardElement = e.target;
-
+    
     if (lockboard) return; //prevents the user to click more cards during matching process
     if (cardElement === firstCard) return;
 
@@ -315,38 +372,44 @@ function flipCard (e) {
         return;
     };
     secondCard = cardElement;
-    checkForMatch();
+    checkForMatch(cardValues);
+
+
 
 };
 
 /**
  * Function that checks if the first and second card match
  */
-function checkForMatch(){
-    console.log('firstCard', firstCard)
-    console.log('secondCard', secondCard)
+function checkForMatch(cardValues){
+    // console.log('firstCard', firstCard)
+    // console.log('secondCard', secondCard)
     const isMatch = firstCard.innerHTML === secondCard.innerHTML;
+    // console.log(isMatch);
 
-    isMatch ? lockCards() : unflipCards();
+    isMatch ? lockCards(cardValues) : unflipCards();
 };
 
 /**
  * disable clicking event for matching cards
  */
-function lockCards() {
+function lockCards(cardValues) {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-
+    console.log(firstCard);
+    console.log(secondCard);
     matchedCards += 2;
+    console.log(matchedCards);
+    console.log('cardValues from lockCards', cardValues)
 
     // matchedCards == cardValues.length ? resetGame() : resetBoard();
-
-   if ( matchedCards == cardValues.length ) {
+   if ( matchedCards === cardValues.length ) {
     alert('You won')
     incrementWins();
-    resetGame()} else { 
+    resetGame()
+    } else { 
         resetBoard();
-    }
+    };
 
     //resetBoard();
 };
