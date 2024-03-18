@@ -1,14 +1,7 @@
-// const cardValues1 = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
-// const cardValues2 = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
-// const cardValues3 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
 
 let imageArray = ["banner", "book", "cyclops", "dead", "dragon", "elf", "gem", "giant", "haunted-house", "hydra", "magic-wand", "moon", "orc", "potions", "red-riding-hood", "skills", "sword", "wizard", "wooden-stick"];
 
-// const cardValuesImgs1 = [] ["wizard", "wizard", "sword", "sword", "potions", "potions", "orc", "orc", "hydra", "elf", "hydra", "elf"]
-// const cardValuesImgs2 = [...cardValuesImgs1, ]
-// const cardValuesImgs3 = [...cardValuesImgs2, ]
-
-let cardValuesImgs1 = [];
 let cardValues1 = []; 
 let cardValues2 = []; 
 let cardValues3 = []; 
@@ -16,7 +9,6 @@ let cardValues3 = [];
 let cardValues;
 var firstCard;
 var secondCard;
-var chosenCard;
 let matchedCards = 0;
 let lockboard = true;
 let gradual = false;
@@ -40,8 +32,6 @@ const back = document.getElementById ("back");
 const resume = document.getElementById("resume");
 const ruleButton = document.getElementById("rule-button");
 const iButton = document.getElementById("i-button");
-// const timer = document.getElementById("timer");
-// const counter = document.getElementById("counter");
 let mistakes = document.getElementById("fails");
 let winScore = document.getElementById("win");
 let wins = document.getElementById("total-wins");
@@ -60,8 +50,6 @@ ruleWindow.style.display = "none";
 iButton.style.display="none";
 resume.style.display="none";
 time.style.display= "none";
-// ruleArea.style.display="none";
-// timer.style.display = "none";
 
 
 
@@ -88,17 +76,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 difficultyButtons.style.display = "none";
                 ruleWindow.style.display = "none";
                 ruleButton.style.display = "block";
-                // iButton.style.display = "none";
-                // timer.style.display = "none"
 
-                
-
+                // To properly reset the timer
                 clearInterval(clock);
                 timer.innerHTML='0:00';
 
                 backReset()
-
-                
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
@@ -108,13 +91,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 
 
             } else if (this.getAttribute("data-type")==="rules") {
+
                 ruleWindow.style.display = "block";
                 gameStart.style.display = "none";
                 memoryGame.style.display = "none";
                 question.style.display = "none";
                 gameOptions.style.display = "none";
                 ruleButton.style.display = "none";
-                // back.style.display = "none";
+
+                // To differentiate between going to homescreen or resume game.
                 if (gameOn){
                     resume.style.display = "block";
                     back.style.display="none"
@@ -123,18 +108,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
             } else if (this.getAttribute("data-type") === "easy") {
+
                 level = "easy";
-                
                 cardContainer.innerHTML= "";
-
-                // imageArray.sort( () => Math.random() - 0.5);
-                // cardValues = cardValues1;
-                //cardValuesImgs1 = imageArray.sort(function() { return 0.5 - Math.random() });
-                // cardValues1 = imageArray.slice(0,6);
-                // cardValues = [...cardValues1, ...cardValues1]
-                // cardValues = Array.from({ length: 2 }, () => [...cardValuesImgs1]).flat();
-
-                
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "medium"){
@@ -143,17 +119,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 // imageArray.sort( () => Math.random() - 0.5);
                 // cardValues2 = imageArray.slice(0,8);
                 // cardValues = [...cardValues2, ...cardValues2]
-
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "hard"){
-                level = "hard";
-                // cardValues = cardValues3;
-                // imageArray.sort( () => Math.random() - 0.5);
-                // cardValues3 = imageArray.slice(0,8);
-                // cardValues = [...cardValues3, ...cardValues3]
 
+                level = "hard";
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
@@ -165,11 +136,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
-                    // timer.innerHTML= "0:00";
 
                     level = "gradual";
-                    // winScore.style.display = "none";
                     gradual = true;
+
                     cardValues = cardValues1
                     cardContainer.innerHTML= "";
                     runGame(cardValues);
@@ -188,14 +158,9 @@ document.addEventListener("DOMContentLoaded", function() {
  * function that is called to start a new game
  */
 function runGame(cardValues) { 
-    gameOptions.style.display = "none";
-    gameStart.style.display = "none";
-    question.style.display = "none";
-    score.style.display = "flex";
-    memoryGame.style.display = "block";
-    back.style.display = "block";
-    ruleButton.style.display="none";
-    iButton.style.display = "block"
+
+    gameMode();
+   
     gameOn = true;
    
 
@@ -226,18 +191,17 @@ function runGame(cardValues) {
     if (level === "easy"){
         cardValues1 = imageArray.slice(0,6);
         cardValues = [...cardValues1, ...cardValues1];
-        console.log(cardValues);
+   
     } else if ( level === "medium"){
         cardValues2 = imageArray.slice(0,8);
         cardValues = [...cardValues2, ...cardValues2]
+
     } else if (level === "hard") {
         cardValues3 = imageArray.slice(0,8);
         cardValues = [...cardValues3, ...cardValues3]
     };
 
-    console.log(cardValues.length)
-    console.log(typeof cardValues)
-    console.log(cardValues)
+  
    
 
     // Shuffle the card values
@@ -268,11 +232,11 @@ function bestTimeRecord(){
     let minuteB = (bestTime.innerText[0]);
     let tenthB = (bestTime.innerText[2]);
     let secondB = (bestTime.innerText[3]);
-    console.log(minuteB, tenthB, secondB);
+
     let minuteT = (timer.innerText [0]);
     let tenthT = (timer.innerText [2]);
     let secondT = (timer.innerText [3]);
-    console.log(minuteT, tenthT, secondT);
+
 
     if (bestTime.innerText==="0:00"){
         bestTime.innerText = timer.innerText;
@@ -293,30 +257,13 @@ function bestTimeRecord(){
  */
 function shuffleCards(cardValues) {
     cardValues.sort(() => Math.random() - 0.5);
-
-    // imageArray.sort( () => Math.random() - 0.5);
-    
-
-    // if (level === "easy"){
-        
-    //     cardValuesImgs1 = imageArray.slice(0,6);
-       
-    //     cardValues = Array.from({ length: 2 }, () => [...cardValuesImgs1]).flat();
-    //     console.log(cardValues)
-
-    // };
-    //             // cardValuesImgs1 = cardValuesImgs1.slice(0,6);
-    //             // 
-    
 };
+
 
 /**
  * Create and display cards
  */
-
 function createCards(cardValues) {
-    // console.log("this is the array", cardValues);
-    console.log(cardValues.length);
     cardValues.forEach((value) => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -330,7 +277,7 @@ function createCards(cardValues) {
         
         cardContainer.appendChild(card);
     });
-    console.log(typeof cardValues)
+
 
     initialFlipAll();
     
@@ -358,7 +305,7 @@ function initialFlipAll () {
 
 
 function flipCard(e, cardValues) {
-    console.log('cardValues flipCard', cardValues)
+
     const cardElement = e.target;
     
     if (lockboard) return; //prevents the user to click more cards during matching process
@@ -382,10 +329,9 @@ function flipCard(e, cardValues) {
  * Function that checks if the first and second card match
  */
 function checkForMatch(cardValues){
-    // console.log('firstCard', firstCard)
-    // console.log('secondCard', secondCard)
+
     const isMatch = firstCard.innerHTML === secondCard.innerHTML;
-    // console.log(isMatch);
+
 
     isMatch ? lockCards(cardValues) : unflipCards();
 };
@@ -396,13 +342,11 @@ function checkForMatch(cardValues){
 function lockCards(cardValues) {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    console.log(firstCard);
-    console.log(secondCard);
-    matchedCards += 2;
-    console.log(matchedCards);
-    console.log('cardValues from lockCards', cardValues)
 
-    // matchedCards == cardValues.length ? resetGame() : resetBoard();
+    matchedCards += 2;
+
+
+ 
    if ( matchedCards === cardValues.length ) {
     alert('You won')
     incrementWins();
@@ -411,7 +355,7 @@ function lockCards(cardValues) {
         resetBoard();
     };
 
-    //resetBoard();
+   
 };
 
 /**
@@ -421,8 +365,6 @@ function lockCards(cardValues) {
  */
 function unflipCards() {
     lockboard = true;
-
-    
 
     setTimeout(() => {
       firstCard.classList.remove('flip');
@@ -454,10 +396,10 @@ function incrementFails() {
     let oldFailScore = parseInt(mistakes.innerText);
     mistakes.innerText = ++oldFailScore;
 
-    // if (mistakes.innerText == 5){
-    //     resetGame();
-    //     alert("Game Over")
-    // }
+    if (mistakes.innerText == 5){
+        resetGame();
+        alert("Game Over")
+    }
 }
 
 /**
@@ -511,9 +453,8 @@ function resetGame(){
             cardValues = cardValues3;
             runGame(cardValues); 
         } else {
-            console.log("supposed to end");
             bestTimeRecord();
-            // alert("game is done");
+            alert("game is done");
 
             gameOptions.style.display = "flex";
             gameStart.style.display = "flex";
@@ -523,8 +464,6 @@ function resetGame(){
             difficultyButtons.style.display = "none";
             ruleWindow.style.display = "none";
             ruleButton.style.display = "block";
-            // iButton.style.display = "none";
-            // timer.style.display = "none"
 
             
 
@@ -538,12 +477,6 @@ function resetGame(){
     }
 
 
-    
-   //instead of below code
-    // //shuffle and recreate the cards
-    // shuffleCards(cardValues);
-
-    // createCards(cardValues);
 };
 
 
@@ -555,26 +488,16 @@ function backReset(){
 
     cardContainer.innerHTML= "";
     gameOn = false;
-}
+};
 
-/**
- * https://codepen.io/masudrana2779/pen/GRqzPdZ
- * function for a countdown
- */
-// function countdown() {
-//     var seconds = 59;
-//     function tick() {
-//       var counter = document.getElementById("counter");
-//       counter.innerHTML ="";
-//       seconds--;
-//       counter.innerHTML =
-//         "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-//       if (seconds > 0) {
-//         setTimeout(tick, 1000);
-//       } else {
-//         document.getElementById("counter").innerHTML = "";
-//       };
-//     };
-   
-//     tick();
-// }
+function gameMode(){
+    gameOptions.style.display = "none";
+    gameStart.style.display = "none";
+    question.style.display = "none";
+    score.style.display = "flex";
+    memoryGame.style.display = "block";
+    back.style.display = "block";
+    ruleButton.style.display="none";
+    iButton.style.display = "block"
+
+}
