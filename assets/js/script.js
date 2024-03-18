@@ -11,6 +11,7 @@ let lockboard = true;
 let gradual = false;
 let gameOn = false;
 let level = "";
+let clock;
 
 let seconds = 0;
 let minutes = 0;
@@ -78,10 +79,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 ruleButton.style.display = "block";
                 // iButton.style.display = "none";
                 // timer.style.display = "none"
-                backReset()
 
                 clearInterval(clock);
-                timer.innerHTML='0:00'
+                timer.innerHTML='0:00';
+
+                backReset()
+
+                
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
@@ -165,15 +169,22 @@ function runGame(cardValues) {
     ruleButton.style.display="none";
     iButton.style.display = "block"
     gameOn = true;
-    winScore.style.display = "block";
-    time.style.display = "none";
+   
 
-    seconds=0;
-    minutes =0;
+   
     if (level === "gradual"){
         time.style.display = "block";
         winScore.style.display = "none";
-        clock = setInterval(setTimer, 1000);
+        if (cardValues == cardValues1){
+            // clearInterval(clock);
+            // timer.innerHTML='0:00';
+            seconds=0;
+            minutes=0;
+            clock = setInterval(setTimer, 1000);
+        };
+    } else { 
+        winScore.style.display = "block";
+        time.style.display = "none";
     }
     
     // timer.style.display = "block";
