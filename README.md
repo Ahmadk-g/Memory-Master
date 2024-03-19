@@ -57,14 +57,16 @@ Our website includes various features that enhance its usability and promote a f
 
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
-    ![Home Screen Levels](<img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png" width="200px">)
-    ![Home Screen Levels](<img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png" width="48%">)
+    ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png width="200px")
+    ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png width="48%")
 
 
 - __Rules button__
 
   - Displayed on both the homescreen and within the game mode, this feature aims to enhance user-friendliness by providing the option for players to access the game rules at any given moment.
   - Shown as "Rules" on the homescreen and as an "i" icon for information within the game screen.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png" alt="Rule Button" width="300" height="200">
 
 
     ![Rule Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png)
