@@ -58,6 +58,8 @@ Our website includes various features that enhance its usability and promote a f
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
     ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png | width=200)
+    ![Home Screen Levels](<img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png" width="48">)
+
 
 - __Rules button__
 
