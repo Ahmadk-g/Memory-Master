@@ -281,6 +281,7 @@ function initialFlipAll () {
     cards.forEach((card) => {
         
         setTimeout(() => {
+            lockCards=true;
             card.classList.add('flip');
             card.style.transform = "rotateY(360deg)";
             }, 500);
