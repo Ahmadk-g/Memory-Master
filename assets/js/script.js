@@ -57,8 +57,8 @@ time.style.display= "none";
 document.addEventListener("DOMContentLoaded", function() {
 
     level= "";
-    imageArray.sort( () => Math.random() - 0.5);
-    setCardValues()
+    
+    // setCardValues()
 
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
@@ -99,22 +99,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
             } else if (this.getAttribute("data-type") === "easy") {
-                console.log(cardValues1)
                 level = "easy";
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "medium"){
                 level = "medium";
-                // cardValues = cardValues2;
-                // imageArray.sort( () => Math.random() - 0.5);
-                // cardValues2 = imageArray.slice(0,8);
-                // cardValues = [...cardValues2, ...cardValues2]
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "hard"){
-
                 level = "hard";
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
@@ -154,17 +148,13 @@ function runGame(cardValues) {
    
     gameOn = true;
    
-    // imageArray.sort( () => Math.random() - 0.5);
-    // setCardValues();
-   
    
     if (level === "gradual"){
         console.log('cardValues', cardValues)
         time.style.display = "block";
         winScore.style.display = "none";
         if (cardValues == cardValues1){
-            // clearInterval(clock);
-            // timer.innerHTML='0:00';
+
             seconds=0;
             minutes=0;
             clock = setInterval(setTimer, 1000);
@@ -181,19 +171,16 @@ function runGame(cardValues) {
 
     //  setCardValues(imageArray);
     if (level === "easy"){
-        cardValues1 = imageArray.slice(0,6);
-        cardValues = [...cardValues1, ...cardValues1];
-        console.log(cardValues);
-        // cardValues1 = cardValues;
+        setCardValues()
+        cardValues= cardValues1;
    
     } else if ( level === "medium"){
-        cardValues2 = imageArray.slice(0,8);
-        cardValues = [...cardValues2, ...cardValues2];
-        // cardValues = cardValues2;
+        setCardValues()
+        cardValues= cardValues2;
 
     } else if (level === "hard") {
-        cardValues3 = imageArray.slice(0,10);
-        cardValues = [...cardValues3, ...cardValues3];
+        setCardValues()
+        cardValues= cardValues3;
     };
    
    
@@ -255,23 +242,17 @@ function bestTimeRecord(){
  * Assigning values to different cardValue arrays
  */
 function setCardValues(){
-    console.log(imageArray)
-    // if (level === "easy"){
+    imageArray.sort( () => Math.random() - 0.5);
         
     cardValues1 = imageArray.slice(0,6);
     cardValues1 = [...cardValues1, ...cardValues1];
-        // cardValues1 = cardValues;
-   
-    // } else if ( level === "medium"){
+ 
     cardValues2 = imageArray.slice(0,8);
     cardValues2 = [...cardValues2, ...cardValues2];
-        // cardValues = cardValues2;
 
-    // } else if (level === "hard") {
     cardValues3 = imageArray.slice(0,10);
     cardValues3 = [...cardValues3, ...cardValues3];
-        // cardValues = cardValues3;
-    // };
+
 }
 
 /**
