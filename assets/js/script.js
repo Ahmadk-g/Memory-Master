@@ -57,6 +57,8 @@ time.style.display= "none";
 document.addEventListener("DOMContentLoaded", function() {
 
     level= "";
+    imageArray.sort( () => Math.random() - 0.5);
+    setCardValues()
 
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
@@ -68,20 +70,14 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
 
             if (this.getAttribute("data-type") === "back-button") {
-                gameOptions.style.display = "flex";
-                gameStart.style.display = "flex";
-                question.style.display = "block";
-                memoryGame.style.display = "none";
-                back.style.display = "none";
-                difficultyButtons.style.display = "none";
-                ruleWindow.style.display = "none";
-                ruleButton.style.display = "block";
+                
+                homeScreen();
 
                 // To properly reset the timer
                 clearInterval(clock);
                 timer.innerHTML='0:00';
 
-                backReset()
+                backReset();
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
@@ -92,12 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             } else if (this.getAttribute("data-type")==="rules") {
 
-                ruleWindow.style.display = "block";
-                gameStart.style.display = "none";
-                memoryGame.style.display = "none";
-                question.style.display = "none";
-                gameOptions.style.display = "none";
-                ruleButton.style.display = "none";
+                rulesScreen();
 
                 // To differentiate between going to homescreen or resume game.
                 if (gameOn){
@@ -108,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
             } else if (this.getAttribute("data-type") === "easy") {
-
+                console.log(cardValues1)
                 level = "easy";
                 cardContainer.innerHTML= "";
                 runGame(cardValues);
@@ -136,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
-
+                    setCardValues()
                     level = "gradual";
                     gradual = true;
 
@@ -163,9 +154,12 @@ function runGame(cardValues) {
    
     gameOn = true;
    
-
+    // imageArray.sort( () => Math.random() - 0.5);
+    // setCardValues();
+   
    
     if (level === "gradual"){
+        console.log('cardValues', cardValues)
         time.style.display = "block";
         winScore.style.display = "none";
         if (cardValues == cardValues1){
@@ -180,28 +174,28 @@ function runGame(cardValues) {
         time.style.display = "none";
     }
     
-    // timer.style.display = "block";
 
-    // counter.innerHTML="";
-    
-    // countdown();
+     imageArray.sort( () => Math.random() - 0.5);
 
-    imageArray.sort( () => Math.random() - 0.5);
+   
 
+    //  setCardValues(imageArray);
     if (level === "easy"){
         cardValues1 = imageArray.slice(0,6);
         cardValues = [...cardValues1, ...cardValues1];
+        console.log(cardValues);
+        // cardValues1 = cardValues;
    
     } else if ( level === "medium"){
         cardValues2 = imageArray.slice(0,8);
-        cardValues = [...cardValues2, ...cardValues2]
+        cardValues = [...cardValues2, ...cardValues2];
+        // cardValues = cardValues2;
 
     } else if (level === "hard") {
-        cardValues3 = imageArray.slice(0,8);
-        cardValues = [...cardValues3, ...cardValues3]
+        cardValues3 = imageArray.slice(0,10);
+        cardValues = [...cardValues3, ...cardValues3];
     };
-
-  
+   
    
 
     // Shuffle the card values
@@ -212,9 +206,10 @@ function runGame(cardValues) {
 
 };
 
-
+/**
+ * For setting timer in Gradual mode
+ */
 function setTimer() {
-    // setInterval(() => {
         seconds++;
 
         if (seconds == 60) {
@@ -225,9 +220,12 @@ function setTimer() {
         const timeFormat = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
 
         timer.textContent = timeFormat;
-    // }, 1000)
 }
 
+
+/**
+ * For updating the Best time inner text
+ */
 function bestTimeRecord(){
     let minuteB = (bestTime.innerText[0]);
     let tenthB = (bestTime.innerText[2]);
@@ -250,6 +248,30 @@ function bestTimeRecord(){
         bestTime.innerText = timer.innerText;
     }
     
+}
+
+
+/**
+ * Assigning values to different cardValue arrays
+ */
+function setCardValues(){
+    console.log(imageArray)
+    // if (level === "easy"){
+        
+    cardValues1 = imageArray.slice(0,6);
+    cardValues1 = [...cardValues1, ...cardValues1];
+        // cardValues1 = cardValues;
+   
+    // } else if ( level === "medium"){
+    cardValues2 = imageArray.slice(0,8);
+    cardValues2 = [...cardValues2, ...cardValues2];
+        // cardValues = cardValues2;
+
+    // } else if (level === "hard") {
+    cardValues3 = imageArray.slice(0,10);
+    cardValues3 = [...cardValues3, ...cardValues3];
+        // cardValues = cardValues3;
+    // };
 }
 
 /**
@@ -397,8 +419,10 @@ function incrementFails() {
     mistakes.innerText = ++oldFailScore;
 
     if (mistakes.innerText == 5){
+        alert("Game Over");
         resetGame();
-        alert("Game Over")
+        homeScreen();
+       
     }
 }
 
@@ -490,7 +514,7 @@ function backReset(){
     gameOn = false;
 };
 
-function gameMode(){
+function gameMode() {
     gameOptions.style.display = "none";
     gameStart.style.display = "none";
     question.style.display = "none";
@@ -499,5 +523,25 @@ function gameMode(){
     back.style.display = "block";
     ruleButton.style.display="none";
     iButton.style.display = "block"
+};
 
-}
+function homeScreen() {
+    gameOptions.style.display = "flex";
+    gameStart.style.display = "flex";
+    question.style.display = "block";
+    memoryGame.style.display = "none";
+    back.style.display = "none";
+    difficultyButtons.style.display = "none";
+    ruleWindow.style.display = "none";
+    ruleButton.style.display = "block";
+};
+
+
+function rulesScreen() {
+    ruleWindow.style.display = "block";
+    gameStart.style.display = "none";
+    memoryGame.style.display = "none";
+    question.style.display = "none";
+    gameOptions.style.display = "none";
+    ruleButton.style.display = "none";
+};
