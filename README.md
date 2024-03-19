@@ -53,11 +53,11 @@ Our website includes various features that enhance its usability and promote a f
   - The "Gradual Challenge" game option gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time.
   - Selecting the "Choose Difficulty" game option opens a new window offering three different difficulty levels: Easy, Medium, and Hard.
 
-    ![Home Screen](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png)
+    ![Home Screen](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png | width=200px)
 
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
-    ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png)
+    ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png | width=200)
 
 - __Rules button__
 
