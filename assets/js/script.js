@@ -56,14 +56,9 @@ time.style.display= "none";
 document.addEventListener("DOMContentLoaded", function() {
 
     level= "";
-    
-    // setCardValues()
 
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
-
-
-    // cardValues = cardValues1;
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -149,7 +144,6 @@ function runGame(cardValues) {
    
    
     if (level === "gradual"){
-        console.log('cardValues', cardValues)
         time.style.display = "block";
         winScore.style.display = "none";
         if (cardValues == cardValues1){
@@ -167,8 +161,6 @@ function runGame(cardValues) {
      imageArray.sort( () => Math.random() - 0.5);
 
    
-
-    //  setCardValues(imageArray);
     if (level === "easy"){
         setCardValues()
         cardValues= cardValues1;
@@ -269,10 +261,8 @@ function createCards(cardValues) {
     cardValues.forEach((value) => {
         const card = document.createElement('div');
         card.classList.add('card');
-        // const valueElement = document.createElement('div');
         const valueElement = document.createElement('img');
         valueElement.classList.add('value')
-        // valueElement.textContent = value;
         valueElement.setAttribute('src', `assets/images/cardIcons/${value}.png`)
         card.appendChild(valueElement);
         card.addEventListener('click', (e) => flipCard(e, cardValues)); // Event listener added, so that clicked card undergoes function.
@@ -439,7 +429,6 @@ function incrementWins() {
  */
 function resetGame(){
 
-    // incrementWins();
     resetBoard();
 
     mistakes.textContent = 0
