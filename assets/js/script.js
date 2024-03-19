@@ -22,6 +22,7 @@ let minutes = 0;
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
 const ruleWindow = document.getElementById("rule-window");
+const ruleSection = document.getElementById("rule-section");
 const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");
 const gameStart = document.getElementById("game-start")
@@ -482,7 +483,8 @@ function gameMode() {
     memoryGame.style.display = "block";
     back.style.display = "block";
     ruleButton.style.display="none";
-    iButton.style.display = "block"
+    iButton.style.display = "block";
+    ruleSection.style.display="none";
 };
 
 function homeScreen() {
