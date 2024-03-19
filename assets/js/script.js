@@ -461,16 +461,7 @@ function resetGame(){
             bestTimeRecord();
             alert("game is done");
 
-            gameOptions.style.display = "flex";
-            gameStart.style.display = "flex";
-            question.style.display = "block";
-            memoryGame.style.display = "none";
-            back.style.display = "none";
-            difficultyButtons.style.display = "none";
-            ruleWindow.style.display = "none";
-            ruleButton.style.display = "block";
-
-            
+            homeScreen()
 
             clearInterval(clock);
             timer.innerHTML='0:00';
@@ -516,7 +507,6 @@ function homeScreen() {
     ruleWindow.style.display = "none";
     ruleButton.style.display = "block";
 };
-
 
 function rulesScreen() {
     ruleWindow.style.display = "block";
