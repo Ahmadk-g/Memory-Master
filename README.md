@@ -54,11 +54,11 @@ Our website includes various features that enhance its usability and promote a f
   - Selecting the "Choose Difficulty" game option opens a new window offering three different difficulty levels: Easy, Medium, and Hard.
 
    
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="200px" height="300px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="350px">
 
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png " alt="Game Screen Levels Button" width="200px" height="300px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png " alt="Game Screen Levels Button" width="300px" height="350px">
   
 
 
@@ -69,9 +69,11 @@ Our website includes various features that enhance its usability and promote a f
 
     
 
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png " alt="Rule Button" width="100px" height="60px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info.png " alt="Rule Button" width="100px" height="60px">
 
-    ![Rule Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png)
-    ![Info Icon Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info.png)
+    <!-- ![Rule Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/)
+    ![Info Icon Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info.png) -->
 
 
 - __Rules Window__
@@ -79,8 +81,8 @@ Our website includes various features that enhance its usability and promote a f
     - This section contains the game rules and is only visible when the user clicks on the rules button.
     - When accessed from home screen, a "Back" button is shown, while if accessed during gameplay, a "Resume" button is displayed.
 
-    !
-    ![Rule Window](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png)
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png " alt="Rule Window" width="300px" height="350px">
+    <!-- ![Rule Window](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png) -->
 
 
 
@@ -90,22 +92,26 @@ Our website includes various features that enhance its usability and promote a f
 
   -  This page appears after selecting a game mode. Ths is when the game starts.
 
-    ![Game Page](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png)
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="300px" height="350px">
+    <!-- ![Game Page](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png) -->
 
  - Initial Reveal: At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
 
-    ![Reveal](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png)
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png " alt="Reveal" width="300px" height="350px">
+    <!-- ![Reveal](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png) -->
 
     
   - This page differs between the two main game options in one aspect: in the Gradual Challenge game mode, a timer appears on the top right, while in the Chosen Difficulty mode, a win score is displayed on the top right.
   
   - Gradual Challenge mode:
 
-    ![Gradual Challenge mode](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png)
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="200px" height="120px">
+    <!-- ![Gradual Challenge mode](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png) -->
 
   - Difficulty Levels:
 
-    ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png)
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png " alt="Difficulty level" width="200px" height="120px">
+    <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
 
 
 ### Features that can be implemented in the future
