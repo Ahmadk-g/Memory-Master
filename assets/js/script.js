@@ -496,6 +496,7 @@ function homeScreen() {
     difficultyButtons.style.display = "none";
     ruleWindow.style.display = "none";
     ruleButton.style.display = "block";
+    ruleSection.style.display="block";
 };
 
 function rulesScreen() {
