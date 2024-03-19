@@ -286,10 +286,10 @@ function initialFlipAll () {
             }, 500);
 
         setTimeout(() => {
-            lockboard=true;
+            lockboard=true; // not sure 
             card.style.transform = "rotateY(0deg)";
             card.classList.remove('flip');
-            resetBoard();
+            resetBoard(); // not sure
           }, 3000);
         
     });
