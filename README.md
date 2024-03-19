@@ -78,7 +78,7 @@ Our website includes various features that enhance its usability and promote a f
 - __Rules Window__
 
     - This section contains the game rules and is only visible when the user clicks on the rules button.
-    - When accessed from home screen, a "Back" button is shown, while if accessed during gameplay, a "Resume" button is displayed.
+    - When accessed from home screen, a "Back" button is shown, while if accessed during gameplay, a "continue" button is displayed.
 
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png " alt="Rule Window" width="300px" height="400px">
@@ -86,7 +86,7 @@ Our website includes various features that enhance its usability and promote a f
 
 
 
-### Game Screen_
+### Game Screen
 
 - __Game Screen__
 
@@ -113,6 +113,32 @@ Our website includes various features that enhance its usability and promote a f
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png " alt="Difficulty level" width="300px" height="120px">
     <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
+
+### Game Play
+
+
+- __How it works__
+
+    - Each time a new game starts, all cards are shuffled.
+    - When the user flips two cards and they match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "mistakes" score.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="300px" height="400px">
+
+    - If the user reaches the maximum limit of mistakes, the game ends with a "Game Over" message, and the user is returned to the home screen.
+
+
+
+- __Winning & Scoring__
+
+    - When playing at a chosen difficulty level, each time the player successfully matches all cards and wins the game, the win score is increased by 1, and a new game begins.
+
+
+    - The user can keep playing games as long as they don't lose by reaching the mistakes limit.
+
+    - If the user presses the back button or loses the game, the highest win streak (shown in the home screen) for that particular level will be compared to the total number of wins achieved by the player. If the player has just achieved a higher score for consecutive game wins, the highest win streak will be updated. Otherwise, it will remain unchanged if the new win streak is lower than the previous highest win streak.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png " alt="Difficulty level" width="300px" height="120px">
+    
 
 
 ### Features that can be implemented in the future
