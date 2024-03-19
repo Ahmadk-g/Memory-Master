@@ -21,7 +21,6 @@ let minutes = 0;
 
 const cardContainer = document.getElementById("card-container") ;
 const memoryGame = document.getElementById ("memory-game");
-const ruleArea = document.getElementById("rule-area");
 const ruleWindow = document.getElementById("rule-window");
 const difficultyButtons = document.getElementById("difficulty-buttons");
 const gameOptions = document.getElementById("game-options");

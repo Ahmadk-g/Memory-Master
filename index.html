@@ -15,12 +15,10 @@
 
 
     <main>
-        <!-- <button data-type="rule-button">Rules</button>
-    <div id="rules">
-        <h3>Rules of this game</h3>
-    </div> -->
+        
+        <!--Contains Rule button in homescreen + "Rules of Game" window-->
+        <section>
 
-        <div id="rule-area">
             <button id="rule-button" data-type="rules">Rules</button>
 
             <div id="rule-window">
@@ -52,14 +50,19 @@
                     </li>
                 </ol>
             </div>
-        </div>
+        </section>
 
-        <div id="home-question">
+        <!--Home screen challenge question-->
+        <section id="home-question">
             <p>Are you ready to challenge your memory?</p>
-        </div>
+        </section>
 
 
-        <div id="game-start">
+        <section id="game-start">
+
+            <!--Two game options:
+                gradual challenge, for increasing difficulty + include a record best time.
+                difficulty level, for playing in one difficulty -->
             <div id="game-options">
                 <button id= "gradual-button" data-type="gradual">Gradual challenge</button>
                 <p id="high-score">Best Time: <span id="best-time">0:00</span></p>
@@ -68,6 +71,7 @@
                 <button data-type="difficulty-level">Choose difficulty</button>
             </div>
 
+            <!--pop up when user presses on "difficulty level" + included win streak record-->
             <div id="difficulty-buttons">
                 <div class="win-streak-text">
                     highest win <br> streak
@@ -91,14 +95,11 @@
                     </div>
                 </div>
             </div>
-            
-
-            
-        </div>
+        </section>
 
 
-
-        <div id="memory-game">
+        <!-- Contains the area the game will be created in. includes: timer + win score + mistake score + rules button-->
+        <section id="memory-game">
             <button id="i-button" data-type="rules"><i class="fa-solid fa-circle-info"></i></button>
             <div id="score">
                 <p id = "time">Time: <span id="timer">0:00</span></p>
@@ -107,14 +108,9 @@
             </div>
             <div class="cards" id="card-container"></div>
 
-            <!-- <div id="timer">
-            <span id="counter"></span>
-        </div> -->
-
-        </div>
-
-
+        </section>
     </main>
+    
     <div id="back">
         <button class="back-button" data-type="back-button">Back</button>
     </div>
