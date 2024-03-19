@@ -76,9 +76,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
-                memoryGame.style.display = "block";
-                back.style.display= "block";
-                ruleWindow.style.display = "none";
+                // memoryGame.style.display = "block";
+                // back.style.display= "block";
+                // ruleWindow.style.display = "none";
+                gameMode();
                 
 
             } else if (this.getAttribute("data-type")==="rules") {
@@ -285,9 +286,10 @@ function initialFlipAll () {
             }, 500);
 
         setTimeout(() => {
-            lockboard=false;
+            lockboard=true;
             card.style.transform = "rotateY(0deg)";
             card.classList.remove('flip');
+            resetBoard();
           }, 3000);
         
     });
@@ -486,6 +488,7 @@ function gameMode() {
     ruleSection.style.display="none";
 };
 
+
 function homeScreen() {
     gameOptions.style.display = "flex";
     gameStart.style.display = "flex";
@@ -505,4 +508,5 @@ function rulesScreen() {
     question.style.display = "none";
     gameOptions.style.display = "none";
     ruleButton.style.display = "none";
+    ruleSection.style.display="block"
 };
