@@ -53,12 +53,13 @@ Our website includes various features that enhance its usability and promote a f
   - The "Gradual Challenge" game option gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time.
   - Selecting the "Choose Difficulty" game option opens a new window offering three different difficulty levels: Easy, Medium, and Hard.
 
-    ![Home Screen](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png | width=200px)
+   
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="200px" height="300px">
 
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
-    ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png width="200px")
-    ![Home Screen Levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png width="48%")
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png " alt="Game Screen Levels Button" width="200px" height="300px">
+  
 
 
 - __Rules button__
@@ -66,7 +67,7 @@ Our website includes various features that enhance its usability and promote a f
   - Displayed on both the homescreen and within the game mode, this feature aims to enhance user-friendliness by providing the option for players to access the game rules at any given moment.
   - Shown as "Rules" on the homescreen and as an "i" icon for information within the game screen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png" alt="Rule Button" width="300" height="200">
+    
 
 
     ![Rule Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png)
