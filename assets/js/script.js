@@ -33,6 +33,7 @@ const back = document.getElementById ("back");
 const resume = document.getElementById("resume");
 const ruleButton = document.getElementById("rule-button");
 const iButton = document.getElementById("i-button");
+const endGame = document.getElementById("end-game");
 let lives = document.getElementById("fails");
 let lifeLimit= document.getElementById("fail-limit");
 let winScore = document.getElementById("win");
@@ -51,7 +52,7 @@ back.style.display = "none";
 difficultyButtons.style.display = "none";  
 ruleWindow.style.display = "none";
 resume.style.display="none";
-
+endGame.style.display="none";
 
 
 // Wait for the DOM to finish loading before running the game
@@ -411,9 +412,23 @@ function incrementFails() {
     lives.innerText = ++oldFailScore;
 
     if (lives.innerText == lifeLimit.innerText){
-        alert("Game Over");
-        resetGame();
-        homeScreen();
+
+        lockboard= true;
+        const cards = Array.from(cardContainer.children)
+        cards.forEach((card) => {
+        card.classList.add('disabled');
+        });
+
+        endGame.style.display = "flex";
+
+        setTimeout(() => {
+            resetGame();
+            homeScreen();
+            }, 2500);
+
+
+            
+       
        
     }
 }
@@ -516,6 +531,7 @@ function homeScreen() {
     difficultyButtons.style.display = "none";
     memoryGame.style.display = "none";
     back.style.display = "none";
+    endGame.style.display= "none";
 };
 
 
