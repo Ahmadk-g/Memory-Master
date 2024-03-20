@@ -34,6 +34,8 @@ const resume = document.getElementById("resume");
 const ruleButton = document.getElementById("rule-button");
 const iButton = document.getElementById("i-button");
 const endGame = document.getElementById("end-game");
+const gameOver = document.getElementById("game-over");
+const winGame = document.getElementById("game-done");
 let lives = document.getElementById("fails");
 let lifeLimit= document.getElementById("fail-limit");
 let winScore = document.getElementById("win");
@@ -52,7 +54,8 @@ back.style.display = "none";
 difficultyButtons.style.display = "none";  
 ruleWindow.style.display = "none";
 resume.style.display="none";
-endGame.style.display="none";
+gameOver.style.display="none";
+winGame.style.display="none";
 
 
 // Wait for the DOM to finish loading before running the game
@@ -412,25 +415,21 @@ function incrementFails() {
     lives.innerText = ++oldFailScore;
 
     if (lives.innerText == lifeLimit.innerText){
+        
+        // lockboard= true;
+        
+        // const cards = Array.from(cardContainer.children)
+        // cards.forEach((card) => {
+        // card.classList.add('disabled');
+        // });
 
-        lockboard= true;
-        const cards = Array.from(cardContainer.children)
-        cards.forEach((card) => {
-        card.classList.add('disabled');
-        });
-
-        endGame.style.display = "flex";
+        gameOver.style.display = "flex";
 
         setTimeout(() => {
             resetGame();
             homeScreen();
-            }, 2500);
-
-
-            
-       
-       
-    }
+            }, 2000); 
+    };
 }
 
 /**
@@ -484,12 +483,17 @@ function resetGame(){
             runGame(cardValues); 
         } else if (cardValues === cardValues3){ 
             bestTimeRecord();
-            alert("game is done");
-            homeScreen()
-            clearInterval(clock);
-            timer.innerHTML='0:00';
 
-            backReset()
+            winGame.style.display = "flex";
+
+            setTimeout(() => {
+                homeScreen()
+                clearInterval(clock);
+                timer.innerHTML='0:00';
+                backReset()
+                }, 2000); 
+
+            
         }
     } else {
         runGame(cardValues); 
