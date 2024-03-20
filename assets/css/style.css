@@ -180,6 +180,10 @@ button:hover {
     max-width: 460px;
 }
 
+#i-button{
+    display: block;
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -201,13 +205,21 @@ button:hover {
     transition: transform 0.7s ease;
   }
 
+  .card:hover {
+    box-shadow: rgba(255, 255, 255, 0.359) 0px 50px 100px -20px inset, rgba(255, 255, 255, 0.292) 0px 30px 60px -30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset;
+  }
+
   .card .value {
     display: none;
   }
 
   .flip {
-    background-color: grey;
+    background-color: rgb(255 255 255 / 62%)
     
+  }
+
+  .flip:hover {
+    box-shadow: none;
   }
 
   .flip > .value {

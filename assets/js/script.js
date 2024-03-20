@@ -2,6 +2,7 @@
 
 let imageArray = ["banner", "book", "cyclops", "dead", "dragon", "elf", "gem", "giant", "haunted-house", "hydra", "magic-wand", "moon", "orc", "potions", "red-riding-hood", "skills", "sword", "wizard", "wooden-stick"];
 
+// Declaring all variables
 let cardValues1 = []; 
 let cardValues2 = []; 
 let cardValues3 = []; 
@@ -32,7 +33,8 @@ const back = document.getElementById ("back");
 const resume = document.getElementById("resume");
 const ruleButton = document.getElementById("rule-button");
 const iButton = document.getElementById("i-button");
-let mistakes = document.getElementById("fails");
+let lives = document.getElementById("fails");
+let lifeLimit= document.getElementById("fail-limit");
 let winScore = document.getElementById("win");
 let wins = document.getElementById("total-wins");
 let easyStreak = document.getElementById("easy-streak");
@@ -43,24 +45,24 @@ const timer= document.getElementById("timer");
 let time = document.getElementById("time");
 
 
+//Initial display
 memoryGame.style.display = "none";
 back.style.display = "none";
-difficultyButtons.style.display = "none";  // initially don't show them.
+difficultyButtons.style.display = "none";  
 ruleWindow.style.display = "none";
-iButton.style.display="none";
 resume.style.display="none";
-time.style.display= "none";
 
 
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
 
-    level= "";
+    // level= "";
 
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
 
+    //Add event listener for click
     for (let button of buttons) {
         button.addEventListener("click", function() {
 
@@ -76,9 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
-                // memoryGame.style.display = "block";
-                // back.style.display= "block";
-                // ruleWindow.style.display = "none";
+        
                 gameMode();
                 
 
@@ -141,9 +141,10 @@ function runGame(cardValues) {
 
     gameMode();
    
-    gameOn = true;
+    
    
-   
+    // To start a timer each time a new game starts.
+    // To avoid complications when changing game mode
     if (level === "gradual"){
         gradual=true;
         time.style.display = "block";
@@ -159,10 +160,7 @@ function runGame(cardValues) {
         time.style.display = "none";
     }
     
-
-     imageArray.sort( () => Math.random() - 0.5);
-
-   
+    // To set cardValues for each level
     if (level === "easy"){
         setCardValues()
         cardValues= cardValues1;
@@ -176,7 +174,14 @@ function runGame(cardValues) {
         cardValues= cardValues3;
     };
    
-   
+    // To determine number of lives/level
+   if (cardValues === cardValues1){
+    lifeLimit.innerText = 3;
+   } else if (cardValues === cardValues2){
+    lifeLimit.innerText = 4;
+   } else { lifeLimit.innerText = 5;
+   }
+
 
     // Shuffle the card values
     shuffleCards(cardValues);
@@ -187,7 +192,7 @@ function runGame(cardValues) {
 };
 
 /**
- * For setting timer in Gradual mode
+ * For setting timer in Gradual Challenge mode
  */
 function setTimer() {
         seconds++;
@@ -278,6 +283,7 @@ function createCards(cardValues) {
 };
 
 function initialFlipAll () {
+    lockboard=true; // Lock card clicking during reveal
     const cards = Array.from(cardContainer.children)
     cards.forEach((card) => {
         setTimeout(() => {
@@ -286,10 +292,9 @@ function initialFlipAll () {
             }, 500);
 
         setTimeout(() => {
-            lockboard=true; // not sure 
             card.style.transform = "rotateY(0deg)";
             card.classList.remove('flip');
-            resetBoard(); // not sure
+            resetBoard(); 
           }, 3000);
         
     });
@@ -302,7 +307,8 @@ function flipCard(e, cardValues) {
 
     const cardElement = e.target;
     
-    if (lockboard) return; //prevents the user to click more cards during matching process
+    //prevents the user to click more cards during matching process
+    if (lockboard) return; 
     if (cardElement === firstCard) return;
 
     cardElement.classList.add("flip");
@@ -383,14 +389,14 @@ function resetBoard () {
 
 
 /**
- * increment mistakes
+ * increment lives
  */
 function incrementFails() {
     
-    let oldFailScore = parseInt(mistakes.innerText);
-    mistakes.innerText = ++oldFailScore;
+    let oldFailScore = parseInt(lives.innerText);
+    lives.innerText = ++oldFailScore;
 
-    if (mistakes.innerText == 5){
+    if (lives.innerText == lifeLimit.innerText){
         alert("Game Over");
         resetGame();
         homeScreen();
@@ -433,7 +439,7 @@ function resetGame(){
 
     resetBoard();
 
-    mistakes.textContent = 0
+    lives.textContent = 0
     matchedCards = 0;
     
     // remove all cards from the container
@@ -450,9 +456,7 @@ function resetGame(){
         } else if (cardValues === cardValues3){ 
             bestTimeRecord();
             alert("game is done");
-
             homeScreen()
-
             clearInterval(clock);
             timer.innerHTML='0:00';
 
@@ -469,44 +473,45 @@ function resetGame(){
 function backReset(){
     resetBoard();
 
-    mistakes.textContent = 0
+    lives.textContent = 0
     matchedCards = 0;
 
     cardContainer.innerHTML= "";
     gameOn = false;
 };
 
+
+// Displaying and un-displaying sections for chosen environments.
+
 function gameMode() {
-    gameOptions.style.display = "none";
-    gameStart.style.display = "none";
+    ruleSection.style.display="none";
     question.style.display = "none";
-    score.style.display = "flex";
+    gameStart.style.display = "none";
     memoryGame.style.display = "block";
     back.style.display = "block";
-    ruleButton.style.display="none";
-    iButton.style.display = "block";
-    ruleSection.style.display="none";
+    gameOn = true;
 };
 
 
 function homeScreen() {
-    gameOptions.style.display = "flex";
-    gameStart.style.display = "flex";
+    ruleSection.style.display="block";
+    ruleButton.style.display = "block";
+    ruleWindow.style.display = "none";
     question.style.display = "block";
+    gameStart.style.display = "flex";
+    difficultyButtons.style.display = "none";
     memoryGame.style.display = "none";
     back.style.display = "none";
-    difficultyButtons.style.display = "none";
-    ruleWindow.style.display = "none";
-    ruleButton.style.display = "block";
-    ruleSection.style.display="block";
 };
 
+
+
 function rulesScreen() {
+    ruleSection.style.display="block"
+    ruleButton.style.display = "none";
     ruleWindow.style.display = "block";
+    question.style.display = "none";
     gameStart.style.display = "none";
     memoryGame.style.display = "none";
-    question.style.display = "none";
-    gameOptions.style.display = "none";
-    ruleButton.style.display = "none";
-    ruleSection.style.display="block"
+
 };
