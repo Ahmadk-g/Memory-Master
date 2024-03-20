@@ -98,7 +98,7 @@ Our website includes various features that enhance its usability and promote a f
 
  - Initial Reveal: At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/reveal.png " alt="Reveal" width="300px" height="400px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/reveal.png" alt="Reveal" width="300px" height="400px">
     <!-- ![Reveal](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png) -->
 
     
@@ -106,7 +106,7 @@ Our website includes various features that enhance its usability and promote a f
   
   - Gradual Challenge mode:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="300px" height="120px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="100px" height="120px">
     <!-- ![Gradual Challenge mode](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png) -->
 
   - Difficulty Levels:
