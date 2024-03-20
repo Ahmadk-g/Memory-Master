@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (this.getAttribute("data-type") === "gradual"){
                     setCardValues()
                     level = "gradual";
-                    gradual = true;
 
                     cardValues = cardValues1
                     cardContainer.innerHTML= "";
@@ -146,15 +145,16 @@ function runGame(cardValues) {
    
    
     if (level === "gradual"){
+        gradual=true;
         time.style.display = "block";
         winScore.style.display = "none";
         if (cardValues == cardValues1){
-
             seconds=0;
             minutes=0;
             clock = setInterval(setTimer, 1000);
         };
     } else { 
+        gradual=false;
         winScore.style.display = "block";
         time.style.display = "none";
     }
@@ -447,7 +447,7 @@ function resetGame(){
         } else if (cardValues === cardValues2){
             cardValues = cardValues3;
             runGame(cardValues); 
-        } else {
+        } else if (cardValues === cardValues3){ 
             bestTimeRecord();
             alert("game is done");
 
