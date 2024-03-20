@@ -36,6 +36,7 @@ const iButton = document.getElementById("i-button");
 const endGame = document.getElementById("end-game");
 const gameOver = document.getElementById("game-over");
 const winGame = document.getElementById("game-done");
+const keepGoing = document.getElementById("one-up");
 let lives = document.getElementById("fails");
 let lifeLimit= document.getElementById("fail-limit");
 let winScore = document.getElementById("win");
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearInterval(clock);
                 timer.innerHTML='0:00';
 
-                backReset();
+                // backReset();
 
             } else if (this.getAttribute("data-type")==="resume"){
                 resume.style.display = "none";
@@ -100,17 +101,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
             } else if (this.getAttribute("data-type") === "easy") {
                 level = "easy";
-                cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "medium"){
                 level = "medium";
-                cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "hard"){
                 level = "hard";
-                cardContainer.innerHTML= "";
                 runGame(cardValues);
 
             } else if (this.getAttribute("data-type") === "difficulty-level"){
@@ -125,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     level = "gradual";
 
                     cardValues = cardValues1
-                    cardContainer.innerHTML= "";
                     runGame(cardValues);
 
                 }
@@ -142,6 +139,9 @@ document.addEventListener("DOMContentLoaded", function() {
  * function that is called to start a new game
  */
 function runGame(cardValues) { 
+
+    // remove all cards from the container
+    cardContainer.innerHTML= "";
 
     gameMode();
    
@@ -353,9 +353,15 @@ function lockCards(cardValues) {
 
  
    if ( matchedCards === cardValues.length ) {
-    alert('You won')
-    incrementWins();
-    resetGame()
+    // alert('You won')
+        // keepGoing.style.display="flex"
+        // setTimeout(() => {
+        //     
+        //     keepGoing.style.display="none"
+        //     resetGame()
+        // }, 1000);
+        incrementWins();
+        resetGame()
     } else { 
         resetBoard();
     };
@@ -430,14 +436,10 @@ function incrementFails() {
 
         setTimeout(() => {
             
-            resetGame();
-        }, 2000); 
-
-        setTimeout(() => {
+            // backReset();
             homeScreen();
-            
         }, 2000); 
-
+        
     };
 }
 
@@ -473,39 +475,39 @@ function incrementWins() {
  * Cards are shuffled again and mistake score is reset
  */
 function resetGame(){
-
+    
     resetBoard();
 
     lives.textContent = 0
     matchedCards = 0;
     
-    // remove all cards from the container
-    cardContainer.innerHTML= "";
+
 
     // this part only works if the user chose a gradually increasing diffiuclty
     if (gradual){
         if (cardValues === cardValues1){
             cardValues = cardValues2;
-            runGame(cardValues); 
+            // runGame(cardValues); 
+            nextLevel(cardValues);
         } else if (cardValues === cardValues2){
             cardValues = cardValues3;
-            runGame(cardValues); 
+            // runGame(cardValues); 
+            nextLevel(cardValues);
         } else if (cardValues === cardValues3){ 
             bestTimeRecord();
-
             winGame.style.display = "flex";
-
             setTimeout(() => {
                 homeScreen()
                 clearInterval(clock);
                 timer.innerHTML='0:00';
-                backReset()
+                // backReset()
                 }, 2000); 
 
             
         }
     } else {
-        runGame(cardValues); 
+        nextLevel();
+        
     }
 
 
@@ -522,6 +524,15 @@ function backReset(){
     gameOn = false;
 };
 
+
+function nextLevel(cardValues) {
+    keepGoing.style.display="flex";
+        setTimeout(() => {
+            
+            keepGoing.style.display="none"
+            runGame(cardValues); 
+        }, 1000);
+};
 
 // Displaying and un-displaying sections for chosen environments.
 
@@ -546,6 +557,7 @@ function homeScreen() {
     back.style.display = "none";
     gameOver.style.display = "none";
     winGame.style.display="none";
+    backReset();
 };
 
 

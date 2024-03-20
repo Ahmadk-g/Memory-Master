@@ -253,24 +253,25 @@ button:hover {
     flex-direction: column;
     padding: 20px;
     padding-bottom: 5px;
+    margin-bottom: 10px;
     position: absolute;
     bottom: 500px;
     z-index: 100;
     min-height: 100px;
     min-width: 240px;
     border-radius: 8px;
-    border: solid 2px black;
+    border: solid 2px rgb(124,109,68);
 }
 
 #game-done{
     display: none;
     background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: radial-gradient(circle, rgba(124,109,68,1) 0%, #ffda72 100%);
 }
 
 #game-done > h3 {
-    color: #d2c6c6;
-    margin-bottom: 10px;
+    color: rgb(255 208 106);
+    text-shadow: 2px 2px 1px rgba(124,109,68,1);
 }
 
 #game-over{
@@ -282,8 +283,19 @@ button:hover {
 #game-over > h3{
     color: #390000;
     text-shadow: 2px 2px 2px #bd0909;
-    margin-bottom: 5px;
 }
+
+#one-up {
+    display: none;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(124,109,68,1) 0%, #ffda72 100%);
+}
+
+#one-up > h3 {
+    color: rgb(255 208 106);
+    text-shadow: 2px 2px 1px rgba(124,109,68,1);
+
+};
 
   .back-button{
     width: 136px;
