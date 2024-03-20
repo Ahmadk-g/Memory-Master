@@ -21,7 +21,8 @@ body{
 h1, h2, h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #000000
+    color: #000000;
+    text-align: center;
 }
 
 header{
@@ -56,23 +57,23 @@ main>section {
 
 #rule-window{
     z-index: 99;
+    text-align: start;
 }
 
 ol {
     padding-left: 12px;
 }
 
-p {
-    text-align: start;
-}
 
-li {
-    text-align: start;
-}
-
-li > span {
+.rule-title{
+    text-decoration: underline;
     font-weight: bold;
 }
+
+.game-mode{
+    font-style: italic;
+}
+
 
 #home-question{
     padding: 20px 5px;
@@ -214,8 +215,12 @@ button:hover {
   }
 
   .flip {
-    background-color: rgb(255 255 255 / 62%)
+    background-color: rgb(255 255 255 / 45%)
     
+  }
+
+  .disabled:hover {
+    box-shadow: none
   }
 
   .flip:hover {

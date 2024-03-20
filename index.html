@@ -29,20 +29,21 @@
                 <br>
                 <ol>
                     <li>
-                        <span>Gameplay:</span> Click on any two cards to reveal their hidden symbols. If the symbols
+                        <span class="rule-title">Gameplay</span> <br><br>Click on any two cards to reveal their hidden symbols. If the symbols
                         match, the cards stay face-up. If not, they'll flip back over, so stay focused.
                     </li>
                     <br>
                     <li>
-                        <span>Scoring:</span>
+                        <span class="rule-title">Scoring</span>
                         <ul>
+                            <br>
                             <li>
-                                Gradual Mode: Race against the clock, match all pairs across three levels of varying
+                                <span class="game-mode">Gradual Mode:</span> Race against the clock, match all pairs across three levels of varying
                                 difficulty, aiming for a record-breaking time.
                             </li>
                             <br>
                             <li>
-                                Difficulty Mode: Maintain an unbroken streak of victories at your chosen difficulty
+                                <span class="game-mode">Difficulty Mode:</span> Maintain an unbroken streak of victories at your chosen difficulty
                                 level and set a new record for a win streak.
                             </li>
                         </ul>
@@ -68,13 +69,13 @@
                 <p id="high-score">Best Time: <span id="best-time">0:00</span></p>
                 <br>
                 <br>
-                <button data-type="difficulty-level">Choose difficulty</button>
+                <button data-type="difficulty-level">Choose Difficulty</button>
             </div>
 
             <!--pop up when user presses on "difficulty level" + included win streak record-->
             <div id="difficulty-buttons">
                 <div class="win-streak-text">
-                    highest win <br> streak
+                    Highest Win <br> Streak
                 </div>
                 <div>
                     <button data-type="easy">Easy</button>
@@ -106,6 +107,7 @@
                 <p class="scores" id="win">Total game wins: <span id="total-wins">0</span></p>
                 <p class="scores fail">Lives: <span id="fails">0</span>/<span id="fail-limit">0</span></p>
             </div>
+            <!--Card will be created in this div-->
             <div class="cards" id="card-container"></div>
 
         </section>

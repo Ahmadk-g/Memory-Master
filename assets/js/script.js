@@ -286,6 +286,7 @@ function initialFlipAll () {
     lockboard=true; // Lock card clicking during reveal
     const cards = Array.from(cardContainer.children)
     cards.forEach((card) => {
+        card.classList.add('disabled') //remove hover box shadow from cards
         setTimeout(() => {
             card.classList.add('flip');
             card.style.transform = "rotateY(360deg)";
@@ -366,6 +367,12 @@ function lockCards(cardValues) {
 function unflipCards() {
     lockboard = true;
 
+    //remove hover box shadow from cards when lockboard = true
+    const cards = Array.from(cardContainer.children)
+    cards.forEach((card) => {
+        card.classList.add('disabled')
+    })
+
     setTimeout(() => {
       firstCard.classList.remove('flip');
       firstCard.style.transform = "rotateY(0deg)";
@@ -385,6 +392,13 @@ function resetBoard () {
     lockboard = false;
     firstCard = null;
     secondCard = null;
+
+    // Remove class to allow hover styling on cards
+    const cards = Array.from(cardContainer.children)
+    cards.forEach((card) => {
+        card.classList.remove('disabled')
+    })
+
 };
 
 
