@@ -81,7 +81,7 @@ Our website includes various features that enhance its usability and promote a f
     - When accessed from home screen, a "Back" button is shown, while if accessed during gameplay, a "continue" button is displayed.
 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png " alt="Rule Window" width="300px" height="400px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulewindow.png " alt="Rule Window" width="300px" height="400px">
     <!-- ![Rule Window](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png) -->
 
 
@@ -98,7 +98,7 @@ Our website includes various features that enhance its usability and promote a f
 
  - Initial Reveal: At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png " alt="Reveal" width="300px" height="400px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/reveal.png " alt="Reveal" width="300px" height="400px">
     <!-- ![Reveal](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png) -->
 
     
