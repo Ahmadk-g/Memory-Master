@@ -54,8 +54,8 @@ back.style.display = "none";
 difficultyButtons.style.display = "none";  
 ruleWindow.style.display = "none";
 resume.style.display="none";
-gameOver.style.display="none";
-winGame.style.display="none";
+// gameOver.style.display="none";
+// winGame.style.display="none";
 
 
 // Wait for the DOM to finish loading before running the game
@@ -369,7 +369,10 @@ function lockCards(cardValues) {
  * Added timer for execution
  */
 function unflipCards() {
+    incrementFails();
     lockboard = true;
+    // For the game to not "resetBoard"
+    const gameEnded = lives.innerText == lifeLimit.innerText
 
     //remove hover box shadow from cards when lockboard = true
     const cards = Array.from(cardContainer.children)
@@ -382,9 +385,9 @@ function unflipCards() {
       firstCard.style.transform = "rotateY(0deg)";
       secondCard.classList.remove('flip');
       secondCard.style.transform = "rotateY(0deg)";
-      incrementFails();
-
-      resetBoard();
+      if (!gameEnded) {
+        resetBoard();
+      }
     }, 1000);
   };
 
@@ -416,19 +419,25 @@ function incrementFails() {
 
     if (lives.innerText == lifeLimit.innerText){
         
-        // lockboard= true;
+        lockboard= true;
         
-        // const cards = Array.from(cardContainer.children)
-        // cards.forEach((card) => {
-        // card.classList.add('disabled');
-        // });
+        const cards = Array.from(cardContainer.children)
+        cards.forEach((card) => {
+            card.classList.add('disabled');
+        });
 
         gameOver.style.display = "flex";
 
         setTimeout(() => {
+            
             resetGame();
+        }, 2000); 
+
+        setTimeout(() => {
             homeScreen();
-            }, 2000); 
+            
+        }, 2000); 
+
     };
 }
 
@@ -535,7 +544,8 @@ function homeScreen() {
     difficultyButtons.style.display = "none";
     memoryGame.style.display = "none";
     back.style.display = "none";
-    endGame.style.display= "none";
+    gameOver.style.display = "none";
+    winGame.style.display="none";
 };
 
 
