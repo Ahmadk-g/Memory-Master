@@ -56,9 +56,9 @@ Develop a user-friendly game interface that:
   - The text color alternates between (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
   - The background colors of buttons consist of deep shade of red brown, transitioning to golden when hovered over.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button.png " alt="button view" width="200px" height="80px">
+        <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button.png " alt="button view" width="150px" height="80px">
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button.png " alt="hovered over button view" width="200px" height="80px">
+        <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button.png " alt="hovered over button view" width="150px" height="80px">
 
 
 ## Features 
@@ -71,10 +71,11 @@ Our website includes various features that enhance its usability and promote a f
 
   - The Home screen includes a button to access the rules window, a challenging question, game mode options, and the 'Best Time' score for the "Gradual Challenge" game mode.
   <!-- - The "Gradual Challenge" game mode gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time. -->
-  - Clicking the "Choose Difficulty" button reveals a new section presenting three different difficulty levels: Easy, Medium, and Hard.
+  
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="400px">
 
+  - Clicking the "Choose Difficulty" button reveals a new section presenting three different difficulty levels: Easy, Medium, and Hard.
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png " alt="Game Screen Levels Button" width="300px" height="400px">
@@ -102,7 +103,7 @@ Our website includes various features that enhance its usability and promote a f
     - When accessed from Home screen, a "Back" button is displayed, while if accessed during gameplay, a "continue" button is displayed.
 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulewindow.png " alt="Rule Window" width="300px" height="400px">
+        <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulewindow.png " alt="Rule Window" width="300px" height="400px">
     <!-- ![Rule Window](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesWindow.png) -->
 
 
@@ -111,9 +112,7 @@ Our website includes various features that enhance its usability and promote a f
 
   -  This page appears after selecting a game mode. Ths is when the game starts.
 
-
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="300px" height="400px">
-    <!-- ![Game Page](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png) -->
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="250px" height="400px">
 
  - Initial Reveal:
   At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
@@ -142,11 +141,11 @@ Our website includes various features that enhance its usability and promote a f
     - Each time a new game starts, players are presented with a grid of shuffled cards.
     - Players flip over two cards at a time, attempting to find matching pairs of symbols or images. They must rely on their memory to remember the locations of the cards.
     - If two flipped cards match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "lives" score.
-
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="300px" height="400px">
+    <br>
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="250px" height="400px">
 
     - If the user reaches the maximum limit of mistakes (lives), the game ends with a "Game Over" message, and the user is returned to the home screen.
-
+    <br>
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameover.png " alt="Game over" width="240px" height="180px">
 
 
@@ -157,7 +156,7 @@ Our website includes various features that enhance its usability and promote a f
 
     - When playing at a chosen difficulty level, each time the player successfully matches all cards and wins the game, the win score is increased by 1, and a new game begins.
     <br>
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
+       <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
 
     - The user can keep playing games as long as they don't lose by reaching the mistakes limit.
 
@@ -165,11 +164,11 @@ Our website includes various features that enhance its usability and promote a f
 
     <br>
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-win-streak.png " alt="zero winstreak" width="370px" height="95px">
+       <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-win-streak.png " alt="zero winstreak" width="370px" height="95px">
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-streak.png " alt="updated winstreak" width="370px" height="95px">
+       <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-streak.png " alt="updated winstreak" width="370px" height="95px">
 
-    - in Addition, The number of lives changes according to the difficulty of the level. 3 at easy, 4 at medium, 5 at hard.
+    - Additionally, the number of lives varies based on the difficulty level: 3 for easy, 4 for medium, and 5 for hard.
 
 
 
@@ -180,13 +179,13 @@ Our website includes various features that enhance its usability and promote a f
 
    - The timer starts counting from zero as the game begins. 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/play-time.png " alt="timer" width="115px" height="50px">
+           <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/play-time.png " alt="timer" width="115px" height="50px">
 
    - Similar to the other game mode, players win and progress to the next level by matching all pairs. However, in this mode, the game gradually increases in difficulty as players advance through easy, medium, and hard levels. If the player completes all three levels without losing, the timer at the end is compared to the best recorded time for winning this mode.
 
    - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="345px" height="75px">
+           <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="200px" height="75px">
 
 ### Features that can be implemented in the future
 
