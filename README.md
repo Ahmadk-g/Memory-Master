@@ -41,8 +41,8 @@ Develop a user-friendly game interface that:
   - The text color alternates between (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
   - The background colors of buttons consist of deep shade of red brown, transitioning to golden when hovered over.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/button/info.png " alt="Rule Button" width="100px" height="60px">
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/hover-button/info.png " alt="Rule Button" width="100px" height="60px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button/info.png " alt="Rule Button" width="100px" height="60px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button/info.png " alt="Rule Button" width="100px" height="60px">
 
 
 ## Features 
@@ -120,13 +120,14 @@ Our website includes various features that enhance its usability and promote a f
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winscore.png " alt="Difficulty level" width="350px" height="140px">
     <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
 
-### Game Play
+## Game Play
 
 
 - __How it works__
-
-    - Each time a new game starts, all cards are shuffled.
-    - When the user flips two cards and they match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "lives" score.
+    
+    - Each time a new game starts, players are presented with a grid of shuffled cards.
+    - Players flip over two cards at a time, attempting to find matching pairs of symbols or images. They must rely on their memory to remember the locations of the cards.
+    - If two flipped cards match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "lives" score.
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="300px" height="400px">
 
@@ -136,22 +137,38 @@ Our website includes various features that enhance its usability and promote a f
 
 
 
-- __Winning & Scoring__
+### Winning & Scoring
+
+- __Difficulty Level__
 
     - When playing at a chosen difficulty level, each time the player successfully matches all cards and wins the game, the win score is increased by 1, and a new game begins.
 
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
 
     - The user can keep playing games as long as they don't lose by reaching the mistakes limit.
 
     - If the user presses the back button or loses the game, the highest win streak (shown in the home screen) for that particular level will be compared to the total number of wins achieved by the player. If the player had just achieved a higher score for consecutive game wins, the highest win streak will be updated. Otherwise, it will remain unchanged if the new win streak is lower than the previous highest win streak.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
-    
     <br>
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-winstreak.png " alt="zero winstreak" width="370px" height="95px">
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winstreak.png " alt="updated winstreak" width="370px" height="95px">
+
+
+-__Gradual Challenge__
+
+   -  In the "Gradual Challenge" game mode, the game introduces the player with the first level, which is the easiest.
+
+   - The timer starts counting from zero as the game begins. 
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/time.png " alt="timer" width="115px" height="50px">
+
+   - Similar to the other game mode, players win and progress to the next level by matching all pairs. However, in this mode, the game gradually increases in difficulty as players advance through easy, medium, and hard levels. If the player completes all three levels without losing, the timer at the end is compared to the best recorded time for winning this mode.
+
+   - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/time.png " alt="timer" width="345px" height="75px">
 
 ### Features that can be implemented in the future
 
