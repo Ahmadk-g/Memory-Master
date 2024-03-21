@@ -279,6 +279,8 @@ The live link can be found here - https://ahmadk-g.github.io/Memory-Master/index
 ### Icons
 
  -  Info Icon in Game screen was taken from [Fontawesome](https://fontawesome.com/search).
+ - Favicon downloaded from [Flaticon](https://www.flaticon.com/).
+ - Favicon folder of various sizes was created via [Favicon generator](https://www.favicon-generator.org/).
 
  <!-- - Icon for Favicon was taken from [Freepik](https://www.freepik.com/).
  - Favicon folder of various sizes was created via [Favicon generator](https://www.favicon-generator.org/). -->
