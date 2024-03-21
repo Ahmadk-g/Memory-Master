@@ -209,7 +209,7 @@ This website includes various features that enhance its usability and promote a 
 
 No Errors were returned when passing through [W3C validator](https://validator.w3.org/#validate_by_input).
 
-- [index.html results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fahmadk-g.github.io%2FMemory-Master%2F)
+- [index.html results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fahmadk-g.github.io%2FMemory-Master%2F).
 
   ![index.html validator](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/index-valid.png)
 
@@ -224,11 +224,11 @@ No Errors were returned when passing through [(Jigsaw) validator](https://jigsaw
 
 ### JavaScript Validator
 
-No Errors were returned when passing through [Jshint](https://jshint.com/)
+No Errors were returned when passing through [Jshint](https://jshint.com/).
 
 - script.js
 
-![Js validator](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/js-valid.png)
+![Js validator](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/js-valid.png).
 
 ## Lighthouse Performance Check
 
@@ -236,21 +236,21 @@ Lighthouse in Chrome Developer Tools was used to check performance.
 
 - __Mobile Performance Results__
 
-![Mobile lighthouse results](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/mobile-lighthouse.png)
+![Mobile lighthouse results](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/mobile-lighthouse.png).
 
 - __Desktop Performance Results__
 
-![Desktop lighthouse results](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/desktop-lighthouse.png)
+![Desktop lighthouse results](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/desktop-lighthouse.png).
 
 
 ## Manual Testing
 
 All the points features mentioned below were tested manually.
 
-- All buttons function correctly, redirect user as intended
-- Timer works properly and Best time is updated when expected
-- Highest win streaks for different levels are upgraded when expected
-- All game modes function as expected
+- All buttons function correctly, redirect user as intended.
+- Timer works properly and Best time is updated when expected.
+- Highest win streaks for different levels are upgraded when expected.
+- All game modes function as expected.
 
 ## Unfixed Bugs
 
@@ -299,7 +299,7 @@ The live link can be found here - https://ahmadk-g.github.io/Memory-Master/index
 ### Other
 
  - README structure and reference from [imagine3D](https://ahmadk-g.github.io/Codeinsitute-PP1/index.html).
- - `<img>` attribute was used to declare images in the README to be able to control the sizes.
+ - Html code and attribute was used to declare images in the README to be able to control the sizes.
 
 
 
