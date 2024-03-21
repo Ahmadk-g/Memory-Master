@@ -71,9 +71,7 @@ Our website includes various features that enhance its usability and promote a f
 
   - The Home screen includes a button to access the rules window, a challenging question, game mode options, and the 'Best Time' score for the "Gradual Challenge" game mode.
   <!-- - The "Gradual Challenge" game mode gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time. -->
-  
-
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="400px">
+   <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="400px">
 
   - Clicking the "Choose Difficulty" button reveals a new section presenting three different difficulty levels: Easy, Medium, and Hard.
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
@@ -110,14 +108,14 @@ Our website includes various features that enhance its usability and promote a f
 
 ### Game Screen
 
-  -  This page appears after selecting a game mode. Ths is when the game starts.
+ -  This page appears after selecting a game mode. Ths is when the game starts.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="250px" height="400px">
+<img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="250px" height="400px">
 
  - Initial Reveal:
   At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/reveal.png" alt="Reveal" width="300px" height="400px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/reveal.png" alt="Reveal" width="250px" height="400px">
     <!-- ![Reveal](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png) -->
 
     
@@ -125,12 +123,12 @@ Our website includes various features that enhance its usability and promote a f
   
   - Gradual Challenge mode:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="350px" height="140px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="300px" height="140px">
     <!-- ![Gradual Challenge mode](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png) -->
 
   - Difficulty Levels:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-score.png " alt="Difficulty level" width="350px" height="140px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-score.png " alt="Difficulty level" width="300px" height="140px">
     <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
 
 ## Game Play
