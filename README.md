@@ -56,8 +56,9 @@ Develop a user-friendly game interface that:
   - The text color alternates between (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
   - The background colors of buttons consist of deep shade of red brown, transitioning to golden when hovered over.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button/info.png " alt="Rule Button" width="100px" height="60px">
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button/info.png " alt="Rule Button" width="100px" height="60px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button.png " alt="button view" width="200px" height="80px">
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button.png " alt="hovered over button view" width="200px" height="80px">
 
 
 ## Features 
@@ -66,15 +67,12 @@ Our website includes various features that enhance its usability and promote a f
 
 ### Existing Features
 
-### Home Page 
+### Home screen  
 
-- __The Homescreen page__
+  - The Home screen includes a button to access the rules window, a challenging question, game mode options, and the 'Best Time' score for the "Gradual Challenge" game mode.
+  <!-- - The "Gradual Challenge" game mode gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time. -->
+  - Clicking the "Choose Difficulty" button reveals a new section presenting three different difficulty levels: Easy, Medium, and Hard.
 
-  - The HomeScreen page includes a button to access the rules window, a challenging question, game options, and the best time score for the "Gradual Challenge" game option.
-  - The "Gradual Challenge" game option gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time.
-  - Selecting the "Choose Difficulty" game option opens a new window offering three different difficulty levels: Easy, Medium, and Hard.
-
-   
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="400px">
 
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
@@ -85,8 +83,8 @@ Our website includes various features that enhance its usability and promote a f
 
 - __Rules button__
 
-  - Displayed on both the homescreen and within the game mode, this feature aims to enhance user-friendliness by providing the option for players to access the game rules at any given moment.
-  - Shown as "Rules" on the homescreen and as an "i" icon for information within the game screen.
+  - Displayed on both the Home screen and within the game screen, this feature aims to enhance user-friendliness by providing the option for players to access the game rules at any given moment.
+  - Displayed as "Rules" on the Home screen and represented by an "i" icon for information in the game screen.
 
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rule-button.png " alt="Rule Button" width="100px" height="60px">
@@ -97,10 +95,11 @@ Our website includes various features that enhance its usability and promote a f
     ![Info Icon Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info.png) -->
 
 
+
 - __Rules Window__
 
-    - This section contains the game rules and is only visible when the user clicks on the rules button.
-    - When accessed from home screen, a "Back" button is shown, while if accessed during gameplay, a "continue" button is displayed.
+    - This section contains the game rules and is only visible when the user clicks on the "Rules" button.
+    - When accessed from Home screen, a "Back" button is displayed, while if accessed during gameplay, a "continue" button is displayed.
 
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulewindow.png " alt="Rule Window" width="300px" height="400px">
@@ -110,15 +109,14 @@ Our website includes various features that enhance its usability and promote a f
 
 ### Game Screen
 
-- __Game Screen__
-
   -  This page appears after selecting a game mode. Ths is when the game starts.
 
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="300px" height="400px">
     <!-- ![Game Page](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png) -->
 
- - Initial Reveal: At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
+ - Initial Reveal:
+  At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/reveal.png" alt="Reveal" width="300px" height="400px">
     <!-- ![Reveal](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/initialflip.png) -->
@@ -153,12 +151,12 @@ Our website includes various features that enhance its usability and promote a f
 
 
 
-### Winning & Scoring
+### Winning, Scoring, and Losing
 
 - __Difficulty Level__
 
     - When playing at a chosen difficulty level, each time the player successfully matches all cards and wins the game, the win score is increased by 1, and a new game begins.
-
+    <br>
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
 
     - The user can keep playing games as long as they don't lose by reaching the mistakes limit.
