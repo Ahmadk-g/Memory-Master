@@ -111,7 +111,7 @@ Our website includes various features that enhance its usability and promote a f
 
   - Difficulty Levels:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png " alt="Difficulty level" width="300px" height="120px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winscore.png " alt="Difficulty level" width="300px" height="120px">
     <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
 
 ### Game Play
