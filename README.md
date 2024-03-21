@@ -132,7 +132,7 @@ Our website includes various features that enhance its usability and promote a f
 
   - Difficulty Levels:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winscore.png " alt="Difficulty level" width="350px" height="140px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-score.png " alt="Difficulty level" width="350px" height="140px">
     <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
 
 ## Game Play
@@ -166,9 +166,9 @@ Our website includes various features that enhance its usability and promote a f
 
     <br>
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-winstreak.png " alt="zero winstreak" width="370px" height="95px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-win-streak.png " alt="zero winstreak" width="370px" height="95px">
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winstreak.png " alt="updated winstreak" width="370px" height="95px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-streak.png " alt="updated winstreak" width="370px" height="95px">
 
     - in Addition, The number of lives changes according to the difficulty of the level. 3 at easy, 4 at medium, 5 at hard.
 
