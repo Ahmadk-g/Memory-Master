@@ -154,7 +154,7 @@ This website includes various features that enhance its usability and promote a 
 - __Difficulty Level__
 
   - When playing at a chosen difficulty level, 'Total game wins' score is set to "0". Each time the player successfully matches all cards and wins the game, the win score is increased by 1, and a new game begins.
-    <br>
+  <br>
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
 
   - The user can keep playing games as long as they don't lose by reaching the lives limit.
@@ -181,7 +181,7 @@ This website includes various features that enhance its usability and promote a 
   - Similar to the other game mode, players win and progress to the next level by matching all pairs. However, in this mode, the game gradually increases in difficulty as players advance through easy, medium, and hard levels. If the player completes all three levels without losing, the timer at the end is compared to the best recorded time for winning this mode.
 
   - Upon completing all three levels without losing, a pop-up message saying "You did it" along with the game's ending time will be displayed before returning to the home screen.
-    <br>
+  <br>
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/did-it.png " alt="Game over" width="240px" height="180px">
 
   - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
@@ -192,7 +192,7 @@ This website includes various features that enhance its usability and promote a 
 - __Both modes__
 
   - After the player successfully completes a level by matching all pairs, a pop-up message saying "Keep going" appears before advancing to the next level and starting a new game.
-    <br>
+  <br>
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/keep-going.png " alt="timer" width="300px" height="100px">
 
 

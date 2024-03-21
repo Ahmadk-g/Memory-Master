@@ -20,9 +20,9 @@
     <main>
         
         <!--Contains Rule button in homescreen + "Rules of Game" window-->
-        <section id="rule-section">
+        <div id="rule-section">
 
-            <button id="rule-button" data-type="rules"><h4>Rules</h4></button>
+            <button id="rule-button" data-type="rules">Rules</button>
 
             <div id="rule-window">
                 <h3>Rules of the Game</h3>
@@ -32,21 +32,18 @@
                 <br>
                 <ol>
                     <li>
-                        <span class="rule-title">Gameplay</span> <br><br>Click on any two cards to reveal their hidden symbols. If the symbols
+                        <p class="rule-title">Gameplay</p>Click on any two cards to reveal their hidden symbols. If the symbols
                         match, the cards stay face-up. If not, they'll flip back over, so stay focused.
                     </li>
-                    <br>
                     <li>
-                        <span class="rule-title">Scoring</span>
+                        <p class="rule-title">Scoring</p>
                         <ul>
-                            <br>
                             <li>
-                                <span class="game-mode">Gradual Mode:</span> Race against the clock, match all pairs across three levels of varying
+                                <p class="game-mode">Gradual Mode:</p> Race against the clock, match all pairs across three levels of varying
                                 difficulty, aiming for a record-breaking time.
                             </li>
-                            <br>
                             <li>
-                                <span class="game-mode">Difficulty Mode:</span> Maintain an unbroken streak of victories at your chosen difficulty
+                                <p class="game-mode">Difficulty Mode:</p> Maintain an unbroken streak of victories at your chosen difficulty
                                 level and set a new record for a win streak.
                             </li>
                         </ul>
@@ -54,25 +51,25 @@
                     </li>
                 </ol>
             </div>
-        </section>
+        </div>
 
         <!--Home screen challenge question-->
-        <section id="home-question">
+        <div id="home-question">
             <p>Are you ready to challenge your memory?</p>
-        </section>
+        </div>
 
 
-        <section id="game-start">
+        <div id="game-start">
 
             <!--Two game options:
                 gradual challenge, for increasing difficulty + include a record best time.
                 difficulty level, for playing in one difficulty -->
             <div id="game-options">
-                <button id= "gradual-button" data-type="gradual"><h4>Gradual Challenge</h4></button>
+                <button id= "gradual-button" data-type="gradual">Gradual Challenge</button>
                 <p id="high-score">Best Time: <span id="best-time">0:00</span></p>
                 <br>
                 <br>
-                <button data-type="difficulty-level"><h4>Choose Difficulty</h4></button>
+                <button data-type="difficulty-level">Choose Difficulty</button>
             </div>
 
             <!--pop up when user presses on "difficulty level" + included win streak record-->
@@ -81,29 +78,29 @@
                     Highest Win <br> Streak
                 </div>
                 <div>
-                    <button data-type="easy"><h4>Easy</h4></button>
+                    <button data-type="easy">Easy</button>
                     <div class="streak-area">
                         <p class="win-streak"><span id="easy-streak">0</span></p>
                     </div>
                 </div>
                 <div>
-                    <button data-type="medium"><h4>Medium</h4></button>
+                    <button data-type="medium">Medium</button>
                     <div class="streak-area">
                         <p class="win-streak"><span id="medium-streak">0</span></p>
                     </div>
                 </div>
                 <div>
-                    <button data-type="hard"><h4>Hard</h4></button>
+                    <button data-type="hard">Hard</button>
                     <div class="streak-area"> 
                         <p class="win-streak"><span id="hard-streak">0</span></p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
 
         <!-- Contains the area the game will be created in. includes: timer + win score + mistake score + rules button-->
-        <section id="memory-game">
+        <div id="memory-game">
             <button id="i-button" data-type="rules"><i class="fa-solid fa-circle-info"></i></button>
             <div id="score">
                 <p id = "time">Time: <span id="timer">0:00</span></p>
@@ -112,32 +109,31 @@
             </div>
             <!--Card will be created in this div-->
             <div class="cards" id="card-container"></div>
-        </section>
+        </div>
 
     </main>
     
-    <section id="end-game">
+    <div id="end-game">
         <div class="ending-lines" id="game-over">
             <h3>Game Over</h3>
-            <img src="assets/images/tears.png" class="ending-image" width="50px" alt="crying eye">
+            <img src="assets/images/tears.png" class="ending-image" width="50" alt="crying eye">
         </div>
         <div class="ending-lines" id="game-done">
             <h3>You did it!</h3>
-            <img src="assets/images/medal-.png" class="ending-image" width="50px" alt="medal">
+            <img src="assets/images/medal-.png" class="ending-image" width="50" alt="medal">
             <span id="end-timer">0</span>
         </div>
         <div class="ending-lines" id="one-up">
             <h3>Keep going</h3>
-            <!-- <img src="assets/images/medal-.png" class="ending-image" width="50px" alt="medal"> -->
         </div>
-    </section>
+    </div>
   
 
     <div id="back">
-        <button class="back-button" data-type="back-button"><h4>Back</h4></button>
+        <button class="back-button" data-type="back-button">Back</button>
     </div>
     <div id="resume">
-        <button class="back-button" data-type="resume"><h4>Continue</h4></button>
+        <button class="back-button" data-type="resume">Continue</button>
     </div>
 
 
