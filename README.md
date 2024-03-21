@@ -24,7 +24,22 @@ Develop a user-friendly game interface that:
 - Individuals of various age groups who enjoy puzzle games and seek to challenge and improve their memory skills.
 
 
- ## Design 
+## Player and User Stories
+
+ ### Player Story
+  - I want to be able to select the game mode (Gradual Challenge or Chosen Difficulty) before starting a new game.
+  - I want to see my current score or time displayed prominently during gameplay.
+  - I want to be able to flip cards to find matching pairs and advance to the next level.
+  - I want to be able to return to the home screen at any time.
+
+
+ ### User Story
+  - I want to be able to access the rules of the game from the home screen to understand how to play.
+  - I want the game difficulty to increase gradually as I progress through levels in the Gradual Challenge mode.
+  - I want the game to end and display a "Game Over" message if I exceed the maximum number of mistakes allowed.
+  - I want to see my best time or highest win streak recorded and displayed for each game mode.
+
+## Design 
 
  ### Fonts
   - The font utilized for headers and body text is "Times".
@@ -155,6 +170,10 @@ Our website includes various features that enhance its usability and promote a f
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winstreak.png " alt="updated winstreak" width="370px" height="95px">
 
+    - in Addition, The number of lives changes according to the difficulty of the level. 3 at easy, 4 at medium, 5 at hard.
+
+
+
 
 -__Gradual Challenge__
 
@@ -172,12 +191,7 @@ Our website includes various features that enhance its usability and promote a f
 
 ### Features that can be implemented in the future
 
-- An extra file input in the 'Order' form for a 2D image drawn and to be uploaded by the user, enabling us to transform it into a 3D model.
-- Payement methods and prices.
-- Adress for delivery.
-- Subscribe to newsletter checkbox.
-- Add iframe in contact page of address.
-- Add form dump and thank you page.
+- User can create a username and track their score.
 
 # Testing 
 
@@ -224,16 +238,14 @@ Lighthouse in Chrome Developer Tools was used to check performance.
 
 All the points features mentioned below were tested manually.
 
-- Navigation bar - links.
-- Footer - Social media links.
-- Get started button.
-- Steps redirecting buttons.
-- Links to 3D model sites.
-- Form input requirements. 
-- Form submissions.
-- Form submission page.
+- All buttons function correctly, redirect user as intended
+- Timer works properly and Best time is updated when expected
+- Highest win streaks for different levels are upgraded when expected
+- All game modes function as expected
 
+## Unfixed Bugs
 
+- The timer sometimes lags and skips numbers when the game is opened on different browsers.
 
 
 ## Deployment
@@ -243,37 +255,40 @@ All the points features mentioned below were tested manually.
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - https://ahmadk-g.github.io/Codeinsitute-PP1/index.html
+The live link can be found here - https://ahmadk-g.github.io/Memory-Master/index.html
 
 
 ## Credits 
 
 ### Code
 
- - Reference code for functioning Navigation bar and footer social media links from [Love Running](https://ahmadk-g.github.io/Love-Running-site/index.html).
- - Boxshadow styling [Box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_backgrounds_and_borders/Box-shadow_generator).
+ - Cards are displayed as a Grid, source [css-tricks](https://css-tricks.com/introduction-fr-css-unit/).
+ - Arrow function was used often in Js code [w3schools](https://www.w3schools.com/js/js_arrow_function.asp).
+ - forEach() method of Array instances [mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+ - For the timer, JavaScript setInterval() was used. [programiz](https://www.programiz.com/javascript/setInterval).
+ - Many sections were styled with CSS Inner Shadow (box-shadow:inset). Code copied from [Dev](https://devdevout.com/css/css-inner-shadow).
+ - Text Shadow was used for the End of Game text. sourced from [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
 
 ### Icons
 
- - Icon in header was taken from [Fontawesome](https://fontawesome.com/search).
- - Icon for Favicon was taken from [Freepik](https://www.freepik.com/).
- - Favicon folder of various sizes was created via [Favicon generator](https://www.favicon-generator.org/).
+ -  Info Icon in Game screen was taken from [Fontawesome](https://fontawesome.com/search).
+
+ <!-- - Icon for Favicon was taken from [Freepik](https://www.freepik.com/).
+ - Favicon folder of various sizes was created via [Favicon generator](https://www.favicon-generator.org/). -->
 
 ### Media
 
- - Wesbite images are taken from [Pexels](https://www.pexels.com/) and [Canva](https://www.canva.com/)
- - Video in 'Services' page was taken from [Youtube](https://www.youtube.com/shorts/tbt1R1DKPYU?feature=share) and donwloaded as mp4 via [freemp4downloader](https://freemp4downloader.com/)
+ - Images as the card Values are downloaded from [Flaticon](https://www.flaticon.com/).
  - [ui.dev](https://ui.dev/amiresponsive) was used to get a responsive image for README.
 
 ### Content
 
  - I, the author, have written all the content on the website.
- - The content in 'Technologies' section was sourced from [Protolabs](https://www.protolabs.com/resources/blog/types-of-3d-printing/), rewritten by me, and complemented by my own knowledge.
- - 'Materials' in 'Order' form are sourced from [Simplify3d](https://www.simplify3d.com/resources/materials-guide/).
 
 ### Other
 
- - Reference for README [Love Running README](https://github.com/lucyrush/readme-love-running/blob/master/README.md)
+ - README structure and reference from [imagine3D](https://ahmadk-g.github.io/Codeinsitute-PP1/index.html).
+ - "<img>" attribute was used to declare images in the README to be able to control the sizes.
 
 
 
