@@ -183,11 +183,11 @@ Our website includes various features that enhance its usability and promote a f
 
     - Upon completing all three levels without losing, a pop-up message saying "You did it" along with the game's ending time will be displayed before returning to the home screen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameover.png " alt="Game over" width="240px" height="180px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/did-it.png " alt="Game over" width="240px" height="180px">
 
    - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/did-it.png " alt="timer" width="200px" height="75px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="120px" height="75px">
 
 ### Features that can be implemented in the future
 
