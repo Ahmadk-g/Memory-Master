@@ -47,6 +47,7 @@ let hardStreak = document.getElementById("hard-streak");
 let bestTime = document.getElementById("best-time");
 const timer= document.getElementById("timer");
 let time = document.getElementById("time");
+let endTimer = document.getElementById("end-timer");
 
 
 //Initial display
@@ -55,14 +56,11 @@ back.style.display = "none";
 difficultyButtons.style.display = "none";  
 ruleWindow.style.display = "none";
 resume.style.display="none";
-// gameOver.style.display="none";
-// winGame.style.display="none";
 
 
 // Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function() {
 
-    // level= "";
 
     // Create array with all buttons
     let buttons = document.getElementsByTagName("button");
@@ -224,6 +222,7 @@ function bestTimeRecord(){
     let tenthT = (timer.innerText [2]);
     let secondT = (timer.innerText [3]);
 
+    endTimer.innerText = timer.innerText;
 
     if (bestTime.innerText==="0:00"){
         bestTime.innerText = timer.innerText;
@@ -353,13 +352,6 @@ function lockCards(cardValues) {
 
  
    if ( matchedCards === cardValues.length ) {
-    // alert('You won')
-        // keepGoing.style.display="flex"
-        // setTimeout(() => {
-        //     
-        //     keepGoing.style.display="none"
-        //     resetGame()
-        // }, 1000);
         incrementWins();
         resetGame()
     } else { 
@@ -436,7 +428,6 @@ function incrementFails() {
 
         setTimeout(() => {
             
-            // backReset();
             homeScreen();
         }, 2000); 
         
@@ -487,12 +478,12 @@ function resetGame(){
     if (gradual){
         if (cardValues === cardValues1){
             cardValues = cardValues2;
-            // runGame(cardValues); 
             nextLevel(cardValues);
+
         } else if (cardValues === cardValues2){
             cardValues = cardValues3;
-            // runGame(cardValues); 
             nextLevel(cardValues);
+
         } else if (cardValues === cardValues3){ 
             bestTimeRecord();
             winGame.style.display = "flex";
@@ -500,7 +491,6 @@ function resetGame(){
                 homeScreen()
                 clearInterval(clock);
                 timer.innerHTML='0:00';
-                // backReset()
                 }, 2000); 
 
             

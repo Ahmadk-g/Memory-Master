@@ -177,13 +177,17 @@ Our website includes various features that enhance its usability and promote a f
 
    - The timer starts counting from zero as the game begins. 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/play-time.png " alt="timer" width="115px" height="50px">
+     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/play-time.png " alt="timer" width="115px" height="50px">
 
    - Similar to the other game mode, players win and progress to the next level by matching all pairs. However, in this mode, the game gradually increases in difficulty as players advance through easy, medium, and hard levels. If the player completes all three levels without losing, the timer at the end is compared to the best recorded time for winning this mode.
 
+    - Upon completing all three levels without losing, a pop-up message saying "You did it" along with the game's ending time will be displayed before returning to the home screen.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameover.png " alt="Game over" width="240px" height="180px">
+
    - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="200px" height="75px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/did-it.png " alt="timer" width="200px" height="75px">
 
 ### Features that can be implemented in the future
 
@@ -284,7 +288,7 @@ The live link can be found here - https://ahmadk-g.github.io/Memory-Master/index
 ### Other
 
  - README structure and reference from [imagine3D](https://ahmadk-g.github.io/Codeinsitute-PP1/index.html).
- - "<img>" attribute was used to declare images in the README to be able to control the sizes.
+ - `<img>` attribute was used to declare images in the README to be able to control the sizes.
 
 
 
