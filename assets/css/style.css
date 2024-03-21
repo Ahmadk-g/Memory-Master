@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-
+/* General Styling */
 body{
     background-color: #d8ebb5;
     display: flex;
@@ -16,14 +16,14 @@ body{
     padding: 20px;
 }
 
-/* header element stylings */
+/* Header element stylings */
 h1, h2, h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #530c0c;
     text-align: center;
 }
-
+/* Header */
 header{
     padding: 1rem;
     margin: 20px;
@@ -34,7 +34,7 @@ header{
     justify-content: center;
 }
 
-
+/* Main Content */
 main{
     padding: 10px;
     background-color: #639a67;
@@ -52,6 +52,7 @@ main>section {
     margin: 10px;
 }
 
+/* Rules Section */
 #rule-window{
     z-index: 99;
     text-align: start;
@@ -71,11 +72,12 @@ ol {
     font-style: italic;
 }
 
-
+/* Home Screen Question */
 #home-question{
     padding: 20px 5px;
 }
 
+/* Game-start Section */
  #game-start {
     max-width: 100%;
     display: flex;
@@ -93,6 +95,7 @@ ol {
     align-items: center;
 }
 
+/* General Button Styling */
 button {
     box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px inset, rgba(217, 194, 61, 0.3) 0px 30px 60px -30px, rgba(64, 62, 10, 0.35) 0px -2px 6px 0px inset;
     background-color: #530c0cc7;
@@ -118,7 +121,7 @@ button:hover {
     margin-bottom: 20px;
 }
 
-
+/* Difficulty buttons */
 #difficulty-buttons {
     position: relative;
     width: 120%;
@@ -144,7 +147,7 @@ button:hover {
     left: 20px;
   }
 
-
+/* Score Area Styling */
 #score {
     display: flex;
     justify-content: space-between;
@@ -166,11 +169,16 @@ button:hover {
 }
 
 
-
+/* Timer */
 #timer {
     margin-top: 20px;
 }
 
+#i-button{
+    display: block;
+}
+
+/* Game Area */
 #memory-game{
     border-radius: 8px;
     padding-top: 20px; 
@@ -179,16 +187,14 @@ button:hover {
     max-width: 460px;
 }
 
-#i-button{
-    display: block;
-}
-
+/* Card container */
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
   }
 
+/* Card styling */
 .card {
     width: 100%;
     height: 80px;
@@ -217,6 +223,7 @@ button:hover {
     
   }
 
+  /* Disable effect */
   .disabled:hover {
     box-shadow: none
   }
@@ -233,6 +240,7 @@ button:hover {
     width: 95%;
 }
 
+/* All pop up messages */
 #end-game {
     display: flex;
     justify-content: center;
@@ -311,6 +319,8 @@ button:hover {
     margin-top: 5px;
 }
 
+
+/* Media query: Larger devices (500px and up) */
   @media screen and (min-width: 500px) {
 
 
@@ -343,10 +353,6 @@ button:hover {
         width: 50px;
         height: 50px;
     }
-
-    /* .ending-lines {
-        bottom: 450px;
-    } */
 
     .win-streak-text {
         font-size: small;
