@@ -89,8 +89,9 @@ Our website includes various features that enhance its usability and promote a f
   - Shown as "Rules" on the homescreen and as an "i" icon for information within the game screen.
 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rulesbutton.png " alt="Rule Button" width="100px" height="60px">
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info.png " alt="Rule Button" width="100px" height="60px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/rule-button.png " alt="Rule Button" width="100px" height="60px">
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info-button.png " alt="info Button" width="100px" height="60px">
 
     <!-- ![Rule Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/)
     ![Info Icon Button](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/info.png) -->
@@ -175,19 +176,19 @@ Our website includes various features that enhance its usability and promote a f
 
 
 
--__Gradual Challenge__
+- __Gradual Challenge__
 
    -  In the "Gradual Challenge" game mode, the game introduces the player with the first level, which is the easiest.
 
    - The timer starts counting from zero as the game begins. 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/time.png " alt="timer" width="115px" height="50px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/play-time.png " alt="timer" width="115px" height="50px">
 
    - Similar to the other game mode, players win and progress to the next level by matching all pairs. However, in this mode, the game gradually increases in difficulty as players advance through easy, medium, and hard levels. If the player completes all three levels without losing, the timer at the end is compared to the best recorded time for winning this mode.
 
    - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/time.png " alt="timer" width="345px" height="75px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="345px" height="75px">
 
 ### Features that can be implemented in the future
 
