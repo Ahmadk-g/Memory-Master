@@ -209,25 +209,26 @@ This website includes various features that enhance its usability and promote a 
 
 No Errors were returned when passing through [W3C validator](https://validator.w3.org/#validate_by_input).
 
-- [Home Page results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fahmadk-g.github.io%2FCodeinsitute-PP1%2Findex.html)
+- [index.html results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fahmadk-g.github.io%2FMemory-Master%2F)
 
-  ![Home Page validator](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/index-valid.png)
+  ![index.html validator](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/index-valid.png)
 
-- [Services Page results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fahmadk-g.github.io%2FCodeinsitute-PP1%2Fproduct.html)
-
-  ![Services Page validator](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/product-valid.png)
-
-- [Contact Page results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fahmadk-g.github.io%2FCodeinsitute-PP1%2FContact.html)
-
-  ![Contact Page validator](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/contact-valid.png)
 
 ### CSS Validator
 
 No Errors were returned when passing through [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/).
 
-- [Validator Results](https://jigsaw.w3.org/css-validator/validator#css)
+- [Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fahmadk-g.github.io%2FMemory-Master%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-  ![CSS validator](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/css-valid.png)
+  ![CSS validator](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/css-valid.png)
+
+### JavaScript Validator
+
+No Errors were returned when passing through [Jshint](https://jshint.com/)
+
+- script.js
+
+![Js validator](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/js-valid.png)
 
 ## Lighthouse Performance Check
 
@@ -235,11 +236,11 @@ Lighthouse in Chrome Developer Tools was used to check performance.
 
 - __Mobile Performance Results__
 
-![Mobile lighthouse results](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/mobile-lighthouse.png)
+![Mobile lighthouse results](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/mobile-lighthouse.png)
 
 - __Desktop Performance Results__
 
-![Desktop lighthouse results](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/desktop-lighthouse.png)
+![Desktop lighthouse results](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/desktop-lighthouse.png)
 
 
 ## Manual Testing
