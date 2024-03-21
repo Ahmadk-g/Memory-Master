@@ -56,9 +56,9 @@ Develop a user-friendly game interface that:
   - The text color alternates between (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
   - The background colors of buttons consist of deep shade of red brown, transitioning to golden when hovered over.
 
-        <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button.png " alt="button view" width="150px" height="80px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/button.png " alt="button view" width="150px" height="80px">
 
-        <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button.png " alt="hovered over button view" width="150px" height="80px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/hover-button.png " alt="hovered over button view" width="150px" height="80px">
 
 
 ## Features 
