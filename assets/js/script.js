@@ -25,15 +25,11 @@ const memoryGame = document.getElementById ("memory-game");
 const ruleWindow = document.getElementById("rule-window");
 const ruleSection = document.getElementById("rule-section");
 const difficultyButtons = document.getElementById("difficulty-buttons");
-const gameOptions = document.getElementById("game-options");
-const gameStart = document.getElementById("game-start")
+const gameStart = document.getElementById("game-start");
 const question = document.getElementById("home-question");
-const score = document.getElementById("score");
 const back = document.getElementById ("back");
 const resume = document.getElementById("resume");
 const ruleButton = document.getElementById("rule-button");
-const iButton = document.getElementById("i-button");
-const endGame = document.getElementById("end-game");
 const gameOver = document.getElementById("game-over");
 const winGame = document.getElementById("game-done");
 const keepGoing = document.getElementById("one-up");
@@ -92,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // To differentiate between going to homescreen or resume game.
                 if (gameOn){
                     resume.style.display = "block";
-                    back.style.display="none"
+                    back.style.display="none";
                 } else {
                     back.style.display = "block";
                 }
@@ -117,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (this.getAttribute("data-type") === "gradual"){
-                    setCardValues()
+                    setCardValues();
                     level = "gradual";
 
-                    cardValues = cardValues1
+                    cardValues = cardValues1;
                     runGame(cardValues);
 
                 }
@@ -129,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
             wins.textContent = 0;
 
             });
-        }; 
+        } 
 
 });
 
@@ -155,7 +151,7 @@ function runGame(cardValues) {
             seconds=0;
             minutes=0;
             clock = setInterval(setTimer, 1000);
-        };
+        }
     } else { 
         gradual=false;
         winScore.style.display = "block";
@@ -164,17 +160,17 @@ function runGame(cardValues) {
     
     // To set cardValues for each level
     if (level === "easy"){
-        setCardValues()
+        setCardValues();
         cardValues= cardValues1;
    
     } else if ( level === "medium"){
-        setCardValues()
+        setCardValues();
         cardValues= cardValues2;
 
     } else if (level === "hard") {
-        setCardValues()
+        setCardValues();
         cardValues= cardValues3;
-    };
+    }
    
     // To determine number of lives/level
    if (cardValues === cardValues1){
@@ -191,7 +187,7 @@ function runGame(cardValues) {
     // Create and display the cards
     createCards(cardValues);
 
-};
+}
 
 /**
  * For setting timer in Gradual Challenge mode
@@ -204,7 +200,7 @@ function setTimer() {
             minutes ++;
         }
 
-        const timeFormat = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+        const timeFormat = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
         timer.textContent = timeFormat;
 }
@@ -261,7 +257,7 @@ function setCardValues(){
  */
 function shuffleCards(cardValues) {
     cardValues.sort(() => Math.random() - 0.5);
-};
+}
 
 
 /**
@@ -272,8 +268,8 @@ function createCards(cardValues) {
         const card = document.createElement('div');
         card.classList.add('card');
         const valueElement = document.createElement('img');
-        valueElement.classList.add('value')
-        valueElement.setAttribute('src', `assets/images/cardIcons/${value}.png`)
+        valueElement.classList.add('value');
+        valueElement.setAttribute('src', `assets/images/cardIcons/${value}.png`);
         card.appendChild(valueElement);
         card.addEventListener('click', (e) => flipCard(e, cardValues)); // Event listener added, so that clicked card undergoes function.
         
@@ -283,13 +279,13 @@ function createCards(cardValues) {
 
     initialFlipAll();
     
-};
+}
 
 function initialFlipAll () {
     lockboard=true; // Lock card clicking during reveal
-    const cards = Array.from(cardContainer.children)
+    const cards = Array.from(cardContainer.children);
     cards.forEach((card) => {
-        card.classList.add('disabled') //remove hover box shadow from cards
+        card.classList.add('disabled'); //remove hover box shadow from cards
         setTimeout(() => {
             card.classList.add('flip');
             card.style.transform = "rotateY(360deg)";
@@ -304,7 +300,7 @@ function initialFlipAll () {
     });
     
 
-};
+}
 
 
 function flipCard(e, cardValues) {
@@ -321,13 +317,13 @@ function flipCard(e, cardValues) {
     if (!firstCard) {
         firstCard = cardElement;
         return;
-    };
+    }
     secondCard = cardElement;
     checkForMatch(cardValues);
 
 
 
-};
+}
 
 /**
  * Function that checks if the first and second card match
@@ -338,7 +334,7 @@ function checkForMatch(cardValues){
 
 
     isMatch ? lockCards(cardValues) : unflipCards();
-};
+}
 
 /**
  * disable clicking event for matching cards
@@ -353,13 +349,13 @@ function lockCards(cardValues) {
  
    if ( matchedCards === cardValues.length ) {
         incrementWins();
-        resetGame()
+        resetGame();
     } else { 
         resetBoard();
-    };
+    }
 
    
-};
+}
 
 /**
  * Unflip cards
@@ -370,13 +366,13 @@ function unflipCards() {
     incrementFails();
     lockboard = true;
     // For the game to not "resetBoard"
-    const gameEnded = lives.innerText == lifeLimit.innerText
+    const gameEnded = lives.innerText == lifeLimit.innerText;
 
     //remove hover box shadow from cards when lockboard = true
-    const cards = Array.from(cardContainer.children)
+    const cards = Array.from(cardContainer.children);
     cards.forEach((card) => {
-        card.classList.add('disabled')
-    })
+        card.classList.add('disabled');
+    });
 
     setTimeout(() => {
       firstCard.classList.remove('flip');
@@ -387,7 +383,7 @@ function unflipCards() {
         resetBoard();
       }
     }, 1000);
-  };
+  }
 
 /**
  * resets the values
@@ -399,12 +395,12 @@ function resetBoard () {
     secondCard = null;
 
     // Remove class to allow hover styling on cards
-    const cards = Array.from(cardContainer.children)
+    const cards = Array.from(cardContainer.children);
     cards.forEach((card) => {
-        card.classList.remove('disabled')
-    })
+        card.classList.remove('disabled');
+    });
 
-};
+}
 
 
 /**
@@ -419,7 +415,7 @@ function incrementFails() {
         
         lockboard= true;
         
-        const cards = Array.from(cardContainer.children)
+        const cards = Array.from(cardContainer.children);
         cards.forEach((card) => {
             card.classList.add('disabled');
         });
@@ -431,7 +427,7 @@ function incrementFails() {
             homeScreen();
         }, 2000); 
         
-    };
+    }
 }
 
 /**
@@ -444,19 +440,19 @@ function incrementWins() {
     if (level === "easy") {
         let oldStreak = parseInt(easyStreak.innerText);
         if (parseInt(wins.innerText) > oldStreak){
-            easyStreak.innerText = wins.innerText
-        };
+            easyStreak.innerText = wins.innerText;
+        }
     } else if (level === "medium") {
         let oldStreak = parseInt(midStreak.innerText);
         if (parseInt(wins.innerText) > oldStreak){
-            midStreak.innerText = wins.innerText
-        };
+            midStreak.innerText = wins.innerText;
+        }
     } else if (level === "hard") {
         let oldStreak = parseInt(hardStreak.innerText);
         if (parseInt(wins.innerText) > oldStreak){
-            hardStreak.innerText = wins.innerText
-        };
-    };
+            hardStreak.innerText = wins.innerText;
+        }
+    }
 }
 
 
@@ -469,7 +465,7 @@ function resetGame(){
     
     resetBoard();
 
-    lives.textContent = 0
+    lives.textContent = 0;
     matchedCards = 0;
     
 
@@ -488,7 +484,7 @@ function resetGame(){
             bestTimeRecord();
             winGame.style.display = "flex";
             setTimeout(() => {
-                homeScreen()
+                homeScreen();
                 clearInterval(clock);
                 timer.innerHTML='0:00';
                 }, 2000); 
@@ -501,28 +497,28 @@ function resetGame(){
     }
 
 
-};
+}
 
 
 function backReset(){
     resetBoard();
 
-    lives.textContent = 0
+    lives.textContent = 0;
     matchedCards = 0;
 
     cardContainer.innerHTML= "";
     gameOn = false;
-};
+}
 
 
 function nextLevel(cardValues) {
     keepGoing.style.display="flex";
         setTimeout(() => {
             
-            keepGoing.style.display="none"
+            keepGoing.style.display="none";
             runGame(cardValues); 
         }, 1000);
-};
+}
 
 // Displaying and un-displaying sections for chosen environments.
 
@@ -533,7 +529,7 @@ function gameMode() {
     memoryGame.style.display = "block";
     back.style.display = "block";
     gameOn = true;
-};
+}
 
 
 function homeScreen() {
@@ -548,16 +544,16 @@ function homeScreen() {
     gameOver.style.display = "none";
     winGame.style.display="none";
     backReset();
-};
+}
 
 
 
 function rulesScreen() {
-    ruleSection.style.display="block"
+    ruleSection.style.display="block";
     ruleButton.style.display = "none";
     ruleWindow.style.display = "block";
     question.style.display = "none";
     gameStart.style.display = "none";
     memoryGame.style.display = "none";
 
-};
+}
