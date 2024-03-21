@@ -16,7 +16,7 @@ Develop a user-friendly game interface that:
 - Stimulates and enhances memory skills through engaging gameplay and challenging puzzles.
 - Ensures accessibility for players of all ages and skill levels.
 - Provides progressively challenging levels to keep players engaged.
-- offers an aesthetically pleasing gaming environment with soothing colors, to avoid overstimulation.
+- Offers an aesthetically pleasing gaming environment with soothing colors, to avoid overstimulation.
 
 
 ## Target Audience 
@@ -38,9 +38,11 @@ Develop a user-friendly game interface that:
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/palette.png " alt="color-palette" width="200px" height="80px">
 
-  - The text color alternates between black (#000000) and (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
+  - The text color alternates between (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
   - The background colors of buttons consist of deep shade of red brown, transitioning to golden when hovered over.
 
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/button/info.png " alt="Rule Button" width="100px" height="60px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/hover-button/info.png " alt="Rule Button" width="100px" height="60px">
 
 
 ## Features 
@@ -110,12 +112,12 @@ Our website includes various features that enhance its usability and promote a f
   
   - Gradual Challenge mode:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="100px" height="120px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png " alt="Gradual Challenge Mode" width="350px" height="140px">
     <!-- ![Gradual Challenge mode](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/timer.png) -->
 
   - Difficulty Levels:
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winscore.png " alt="Difficulty level" width="300px" height="120px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winscore.png " alt="Difficulty level" width="350px" height="140px">
     <!-- ![Diffiuclty levels](https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png) -->
 
 ### Game Play
@@ -124,11 +126,13 @@ Our website includes various features that enhance its usability and promote a f
 - __How it works__
 
     - Each time a new game starts, all cards are shuffled.
-    - When the user flips two cards and they match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "mistakes" score.
+    - When the user flips two cards and they match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "lives" score.
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="300px" height="400px">
 
-    - If the user reaches the maximum limit of mistakes, the game ends with a "Game Over" message, and the user is returned to the home screen.
+    - If the user reaches the maximum limit of mistakes (lives), the game ends with a "Game Over" message, and the user is returned to the home screen.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameover.png " alt="Game over" width="240px" height="180px">
 
 
 
@@ -139,11 +143,15 @@ Our website includes various features that enhance its usability and promote a f
 
     - The user can keep playing games as long as they don't lose by reaching the mistakes limit.
 
-    - If the user presses the back button or loses the game, the highest win streak (shown in the home screen) for that particular level will be compared to the total number of wins achieved by the player. If the player has just achieved a higher score for consecutive game wins, the highest win streak will be updated. Otherwise, it will remain unchanged if the new win streak is lower than the previous highest win streak.
+    - If the user presses the back button or loses the game, the highest win streak (shown in the home screen) for that particular level will be compared to the total number of wins achieved by the player. If the player had just achieved a higher score for consecutive game wins, the highest win streak will be updated. Otherwise, it will remain unchanged if the new win streak is lower than the previous highest win streak.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winScore.png " alt="Difficulty level" width="300px" height="120px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/total-winscore.png " alt="total win score" width="150px" height="50px">
     
+    <br>
 
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-winstreak.png " alt="zero winstreak" width="370px" height="95px">
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/winstreak.png " alt="updated winstreak" width="370px" height="95px">
 
 ### Features that can be implemented in the future
 

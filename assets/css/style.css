@@ -105,7 +105,7 @@ button {
 
 button:hover {
     background-color: #d9bf77;
-    color: black;
+    color: #530c0c;
 }
 
 #game-options > button {
