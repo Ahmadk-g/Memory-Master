@@ -165,10 +165,8 @@ Our website includes various features that enhance its usability and promote a f
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/zero-win-streak.png " alt="zero winstreak" width="370px" height="95px">
 
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/win-streak.png " alt="updated winstreak" width="370px" height="95px">
-
+    <br>
     - Additionally, the number of lives varies based on the difficulty level: 3 for easy, 4 for medium, and 5 for hard.
-
-
 
 
 - __Gradual Challenge__
@@ -187,7 +185,16 @@ Our website includes various features that enhance its usability and promote a f
 
    - If a faster time was achieved, the "Best Time" will be updated in the homescreen.
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="120px" height="75px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/best-time.png " alt="timer" width="300px" height="78px">
+
+
+- __Both modes__
+
+    - After the player successfully completes a level by matching all pairs, a pop-up message saying "Keep going" appears before advancing to the next level and starting a new game.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/keep-going.png " alt="timer" width="300px" height="100px">
+
+
 
 ### Features that can be implemented in the future
 
