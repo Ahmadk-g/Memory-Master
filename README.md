@@ -7,7 +7,7 @@ Embark on a journey through increasingly complex levels, where your task is to m
 
 So, sharpen your focus, exercise your recall, and prepare to become the ultimate Memory Master!
 
-![Responsice Mockup](https://github.com/Ahmadk-g/Codeinsitute-PP1/blob/main/assets/images/screenshots/am-i-responsive.png)
+![Responsice Mockup](https://github.com/Ahmadk-g/Memory-Master/blob/main/assets/images/screenshots/am-i-responsive.png)
 
 
 ## Key Project Goals
@@ -27,15 +27,19 @@ Develop a user-friendly game interface that:
  ## Design 
 
  ### Fonts
-  - 
+  - The font utilized for headers and body text is "Times".
+  - The font used for the text in buttons is 'Ariel'.
 
 
  ### Color Scheme 
 
   - The color palette for the game environment was strongly influenced by [SheCodes](https://palettes.shecodes.io/).
-  - The colors used for the nevironment vary betweem #639a67, #d8ebb5, #d9bf77, and #530c0c.
-  - The text color alternates between black (#000000) for light backgrounds and (#d8ebb5) for darker backgrounds.
-  - The background colors of buttons consist of golden, transitioning to a deep shade of red brown when hovered over.
+  - The colors used for the environment vary betweem #639a67, #d8ebb5, #d9bf77, and #530c0c.
+
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/palette.png " alt="color-palette" width="200px" height="80px">
+
+  - The text color alternates between black (#000000) and (#530c0c) for light backgrounds and (#d9bf77) for darker backgrounds.
+  - The background colors of buttons consist of deep shade of red brown, transitioning to golden when hovered over.
 
 
 
