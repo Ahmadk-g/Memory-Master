@@ -71,12 +71,12 @@ Our website includes various features that enhance its usability and promote a f
 
   - The Home screen includes a button to access the rules window, a challenging question, game mode options, and the 'Best Time' score for the "Gradual Challenge" game mode.
   <!-- - The "Gradual Challenge" game mode gradually increases the difficulty after winning each of the three levels. Players compete against the clock, aiming to finish all three levels in a new best time. -->
-   <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="400px">
+  <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen.png " alt="Home Screen" width="300px" height="400px">
 
   - Clicking the "Choose Difficulty" button reveals a new section presenting three different difficulty levels: Easy, Medium, and Hard.
   - When users access the various difficulty levels, a section displaying the highest win streaks appears beneath each level. 
 
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png " alt="Game Screen Levels Button" width="300px" height="400px">
+  <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/homescreen-levels.png " alt="Game Screen Levels Button" width="300px" height="400px">
   
 
 
@@ -108,9 +108,9 @@ Our website includes various features that enhance its usability and promote a f
 
 ### Game Screen
 
- -  This page appears after selecting a game mode. Ths is when the game starts.
+ - This page appears after selecting a game mode. Ths is when the game starts.
 
-<img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="250px" height="400px">
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameon.png " alt="Game Page" width="250px" height="400px">
 
  - Initial Reveal:
   At the beginning of the game, all cards are flipped face-up, giving the user the opportunity to memorize their positions.
@@ -140,8 +140,8 @@ Our website includes various features that enhance its usability and promote a f
     - Players flip over two cards at a time, attempting to find matching pairs of symbols or images. They must rely on their memory to remember the locations of the cards.
     - If two flipped cards match, the cards remain locked in the flipped position. If they do not match, they flip back face down and in increment the "lives" score.
     <br>
-    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="250px" height="400px">
-
+    <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/match.png " alt="Difficulty level" width="250px" height="400px" center >
+    <br>
     - If the user reaches the maximum limit of mistakes (lives), the game ends with a "Game Over" message, and the user is returned to the home screen.
     <br>
     <img src="https://github.com/Ahmadk-g/MEMORY-MASTER/blob/main/assets/images/screenshots/gameover.png " alt="Game over" width="240px" height="180px">
